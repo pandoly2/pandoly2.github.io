@@ -1,0 +1,49 @@
+I"�<p>Github page로 만들어본 블로그</p>
+
+<p>오늘은 무슨 기능이있는지 알아보자.</p>
+
+<p>C언어</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include &lt;stdio.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">"hello world"</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>JAVA</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">HelloWorld</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello, World!"</span><span class="o">);</span> 
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>Jupyter</p>
+
+<figure class="highlight"><pre><code class="language-jupyter" data-lang="jupyter">jupyter</code></pre></figure>
+
+<h1 id="샾-강조-1">샾 강조 1</h1>
+<h2 id="샾샾-강조-2">샾샾 강조 2</h2>
+<h3 id="샾샾샾-강조-3">샾샾샾 강조 3</h3>
+<h4 id="샾샾샾샾-강조-4">샾샾샾샾 강조 4</h4>
+
+<p><a href="https://pandoly2.github.io">링크</a></p>
+
+<p>나는 <strong>Pandoly2</strong> 입니다.
+나는 <em>Pandoly2</em> 입니다.</p>
+
+<p><img src="/assets/images/profile_paris.jpg" alt="프로필" title="Pandoly2" /></p>
+
+<ul>
+  <li>항목 1</li>
+  <li>항목 2</li>
+  <li>항목 3</li>
+</ul>
+
+<ol>
+  <li>첫번째</li>
+  <li>두번째</li>
+</ol>
+
+<p>끝.</p>
+:ET
