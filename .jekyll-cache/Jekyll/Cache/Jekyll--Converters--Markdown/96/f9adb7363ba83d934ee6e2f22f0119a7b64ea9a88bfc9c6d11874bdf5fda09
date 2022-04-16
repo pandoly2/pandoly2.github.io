@@ -1,0 +1,34 @@
+I"�<p>Github page로 만들어본 블로그</p>
+
+<p>오늘은 무슨 기능이있는지 알아보자.</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include &lt;stdio.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">"hello world"</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<h1>#</h1>
+<h2 id="요건-강조인가봄">요건 강조인가봄</h2>
+<h3 id="요건">요건</h3>
+
+<p><strong>문장안에서 강조</strong> 인거같음.
+<a href="http://spectante-mulcet.com/magna">unus</a>이건 멀까
+뒤에별두개<strong>, <a href="http://laborum.net/modo">unda condita</a> 
+<em>별안에</em>  **별두개 안</strong></p>
+
+<ul>
+  <li>항목 1</li>
+  <li>항목 2</li>
+  <li>항목 3</li>
+</ul>
+
+<h2 id="fata-huc-cessura-secant">Fata huc cessura secant</h2>
+
+<ol>
+  <li>첫번째</li>
+  <li>두번째</li>
+</ol>
+
+<p>끝.</p>
+:ET

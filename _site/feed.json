@@ -1,0 +1,39 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Pandoly2 - 생각나는대로",
+    "home_page_url": "http://localhost:4000/",
+    "feed_url": "http://localhost:4000/feed.json",
+    "description": "생각나는대로 적는 공간",
+    "icon": "http://localhost:4000/assets/images/apple-touch-icon.png",
+    "favicon": "http://localhost:4000/assets/images/favicon.png",
+    "expired": false,
+    
+    "author":  {
+        "name": "pandoly2",
+        "url": null,
+        "avatar": null
+    },
+    
+"items": [
+    
+        {
+            "id": "http://localhost:4000/first-post-content/",
+            "title": "First post (글)",
+            "summary": null,
+            "content_text": "Github page로 만들어본 블로그오늘은 무슨 기능이있는지 알아보자.#include &lt;stdio.h&gt;int main(){\tprintf(\"hello world\");}#요건 강조인가봄요건문장안에서 강조 인거같음.unus이건 멀까뒤에별두개, unda condita 별안에  **별두개 안  항목 1  항목 2  항목 3Fata huc cessura secant  첫번째  두번째끝.",
+            "content_html": "<p>Github page로 만들어본 블로그</p><p>오늘은 무슨 기능이있는지 알아보자.</p><figure class=\"highlight\"><pre><code class=\"language-c\" data-lang=\"c\"><span class=\"cp\">#include &lt;stdio.h&gt;</span><span class=\"kt\">int</span> <span class=\"nf\">main</span><span class=\"p\">(){</span>\t<span class=\"n\">printf</span><span class=\"p\">(</span><span class=\"s\">\"hello world\"</span><span class=\"p\">);</span><span class=\"p\">}</span></code></pre></figure><h1>#</h1><h2 id=\"요건-강조인가봄\">요건 강조인가봄</h2><h3 id=\"요건\">요건</h3><p><strong>문장안에서 강조</strong> 인거같음.<a href=\"http://spectante-mulcet.com/magna\">unus</a>이건 멀까뒤에별두개<strong>, <a href=\"http://laborum.net/modo\">unda condita</a> <em>별안에</em>  **별두개 안</strong></p><ul>  <li>항목 1</li>  <li>항목 2</li>  <li>항목 3</li></ul><h2 id=\"fata-huc-cessura-secant\">Fata huc cessura secant</h2><ol>  <li>첫번째</li>  <li>두번째</li></ol><p>끝.</p>",
+            "url": "http://localhost:4000/first-post-content/",
+            
+            
+            
+            "tags": ["pandoly2","jekyll"],
+            
+            "date_published": "2022-04-16T00:00:00+00:00",
+            "date_modified": "2022-04-16T00:00:00+00:00",
+            
+                "author": "pandoly2"
+            
+        }
+    
+    ]
+}
