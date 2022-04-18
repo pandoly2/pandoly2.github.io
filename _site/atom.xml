@@ -4,13 +4,45 @@
  <title>Pandoly2 - 생각나는대로</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2022-04-16T10:27:40+00:00</updated>
+ <updated>2022-04-18T02:04:03+00:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>pandoly2</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>머신러닝 이란</title>
+   <link href="http://localhost:4000/what-is-the-machinlearning/"/>
+   <updated>2022-04-18T00:00:00+00:00</updated>
+   <id>http://localhost:4000/머신러닝이란</id>
+   <content type="html">&lt;h2 id=&quot;4차-산업-혁명&quot;&gt;4차 산업 혁명&lt;/h2&gt;
+&lt;p&gt;2016년 스위스 다보스에서 개최된 세계경제 포럼에서 처음 언급됨&lt;/p&gt;
+
+&lt;p&gt;학자에 따라 정의는 조금씩 다르지만, 대체로 &lt;strong&gt;4차 산업혁명&lt;/strong&gt;은 모든 것이 &lt;font color=&quot;red&quot;&gt;연결(Connectivity)&lt;/font&gt;되어 있는 환경에서 &lt;font color=&quot;red&quot;&gt;인공지능(Artificial Intelligence)&lt;/font&gt;에 의해 더운 편리하고 지능적인 사회로의 혁신적 변화를 지칭함.&lt;/p&gt;
+
+&lt;h2 id=&quot;인공지능artificial-intelligence란&quot;&gt;인공지능(Artificial Intelligence)란&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog_images//WhatIstheAI/WhatIsthe_AI.drawio.png&quot; alt=&quot;WhatIsTheAI&quot; title=&quot;What is the AI&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;regression-classification&quot;&gt;Regression, Classification&lt;/h2&gt;
+&lt;p&gt;Classification : 분류 &lt;br /&gt;
+Regression : 회귀&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog_images//WhatIstheAI/Regression_Classification.png&quot; alt=&quot;WhatIsTheAI&quot; title=&quot;Regression &amp;amp; Classification&quot; width=&quot;100%&quot; height=&quot;100%&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;딥러닝&quot;&gt;딥러닝&lt;/h2&gt;
+&lt;p&gt;뉴런 - 상호작용  (퍼셉트론 설명)&lt;/p&gt;
+
+&lt;h2 id=&quot;학습을-위한-전제조건prerequisite&quot;&gt;학습을 위한 전제조건(Prerequisite)&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;프로그래밍 개념&lt;/li&gt;
+  &lt;li&gt;기본 수학 개념&lt;/li&gt;
+  &lt;li&gt;행렬(Matrix) 연산&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
  
  <entry>
    <title>First post (글)</title>
