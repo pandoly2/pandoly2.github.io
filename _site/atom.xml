@@ -4,7 +4,7 @@
  <title>Pandoly2 - 생각나는대로</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2022-04-18T06:41:59+00:00</updated>
+ <updated>2022-04-18T07:23:49+00:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>pandoly2</name>
@@ -97,7 +97,7 @@ Ref. NeoWizard PPT 5 page (개인용)&lt;/p&gt;
  </entry>
  
  <entry>
-   <title>머신러닝 이란</title>
+   <title>4차 산업혁명의 키워드 인공지능</title>
    <link href="http://localhost:4000/what-is-the-machinlearning/"/>
    <updated>2022-04-18T00:00:00+00:00</updated>
    <id>http://localhost:4000/01-인공지능이란</id>
