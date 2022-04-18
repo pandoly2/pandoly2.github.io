@@ -4,7 +4,7 @@
  <title>Pandoly2 - 생각나는대로</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2022-04-18T02:04:03+00:00</updated>
+ <updated>2022-04-18T06:21:31+00:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>pandoly2</name>
@@ -13,10 +13,58 @@
 
  
  <entry>
+   <title>수학개념 (Prerequisite for Machine Learning)</title>
+   <link href="http://localhost:4000/Prerequisite-of-Math/"/>
+   <updated>2022-04-18T00:00:00+00:00</updated>
+   <id>http://localhost:4000/수학개념(PreRequisiteForMachineLearning)</id>
+   <content type="html">&lt;h2 id=&quot;수치미분&quot;&gt;수치미분&lt;/h2&gt;
+
+&lt;h3 id=&quot;미분으로-얻을-수-있는-insight&quot;&gt;미분으로 얻을 수 있는 Insight&lt;/h3&gt;
+&lt;p&gt;-&amp;gt; 입력 변수 x가 미세하게 변할때, 함수 f(x)가 얼마나 변하는지 알 수 있는 식을 구해라. &lt;br /&gt;
+ -&amp;gt; 한수 f(x)는 입력 x의 미세한 변화에 얼마나 민감하게 반응하는지 알 수 있는 식을 구해라.      &lt;br /&gt;
+&lt;strong&gt;Insight&lt;/strong&gt; &lt;br /&gt;
+ -&amp;gt; 입력 x 를 현재 값에서 아주 조금 변화시키면, 함수 f(x)는 얼마나 변하는가? &lt;br /&gt;
+ -&amp;gt; 함수 f(x)는 입력 x의 미세한 변화에 얼마나 민감하게 반응하는가?&lt;/p&gt;
+
+&lt;font color=&quot;red&quot;&gt; 어떤 값 x가 아주조금 변할때 y값의 미세한 변화량을 나타내는 기울기 혹은 크기 &lt;/font&gt;
+
+&lt;h3 id=&quot;기본-미분-공식&quot;&gt;기본 미분 공식&lt;/h3&gt;
+&lt;p&gt;\(f&apos;\left(x\right)\ =\ \frac{df\left(x\right)}{dx}\ =\lim _{\Delta x \to 0}{\frac{f\left(\left(x\ +\ \Delta x\right)\ -\ f\left(x\right)\right)}{\Delta x}}\)&lt;/p&gt;
+
+&lt;h3 id=&quot;중앙차미분&quot;&gt;중앙차미분&lt;/h3&gt;
+&lt;p&gt;\(f&apos;\left(x\right)\ =\ \frac{df\left(x\right)}{dx}\ =\lim _{\Delta x\to 0}^{ }\frac{f\left(\left(x\ +\ \Delta x\right)\ -\ f\left(x\ -\ \Delta x\right)\right)}{2\Delta x}\)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog_images/NumericalDifferentiation/Numerical_Differentiation.jpg&quot; alt=&quot;Numerical_Differentiation&quot; title=&quot;Numerical Differentiation&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;참조 : &lt;a href=&quot;https://blog.naver.com/PostView.naver?blogId=mykepzzang&amp;amp;logNo=220072089756&amp;amp;parentCategoryNo=&amp;amp;categoryNo=16&amp;amp;viewDate=&amp;amp;isShowPopularPosts=false&amp;amp;from=postView&quot;&gt;https://blog.naver.com/PostView.naver?blogId=mykepzzang&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;편미분&quot;&gt;편미분&lt;/h3&gt;
+
+&lt;p&gt;예 ) \(f\left(x,\ y\right)\ =\ 2x\ +\ 3xy\ +\ y3\) 에 대해,&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;변수 x에 대하여 편미분 &lt;br /&gt;
+\(\frac{\partial f\left(x,y\right)}{\partial x}\ =\ \frac{\partial \left(2x\ +\ 3xy\ +{y}^3\right)}{\partial x}\ =\ 2\ +\ 3y\)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;변수 y에 대하여 편미분 &lt;br /&gt;
+\(\frac{\partial f\left(x,y\right)}{\partial x}\ =\ \frac{\partial \left(2x\ +\ 3xy\ +{y}^3\right)}{\partial x}\ =\ 3x\ +\ 3y^2\)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;chain-rule&quot;&gt;Chain Rule&lt;/h3&gt;
+&lt;p&gt;합성함수란 여러 함수로 구성된 함수로서, 이러한 합성함수를 미분하려면 ‘합성함수를 구성하는 각 함수의 미분의 곱’으로 나타내는 chain rule(연쇄 법칙) 이용
+Ref. NeoWizard PPT 5 page (개인용)&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
    <title>머신러닝 이란</title>
    <link href="http://localhost:4000/what-is-the-machinlearning/"/>
    <updated>2022-04-18T00:00:00+00:00</updated>
-   <id>http://localhost:4000/머신러닝이란</id>
+   <id>http://localhost:4000/머신러닝이란 copy</id>
    <content type="html">&lt;h2 id=&quot;4차-산업-혁명&quot;&gt;4차 산업 혁명&lt;/h2&gt;
 &lt;p&gt;2016년 스위스 다보스에서 개최된 세계경제 포럼에서 처음 언급됨&lt;/p&gt;
 
@@ -99,6 +147,8 @@ Regression : 회귀&lt;/p&gt;
   &lt;li&gt;첫번째&lt;/li&gt;
   &lt;li&gt;두번째&lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;p&gt;참조 : &lt;a href=&quot;https://sukwonyun.github.io/jekyll/Jekyll-%ED%85%8C%EB%A7%88%EC%97%90%EC%84%9C-Latex-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/&quot;&gt;마크다운 수식 넣는 법 링크&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;끝.&lt;/p&gt;
 </content>

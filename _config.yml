@@ -30,9 +30,14 @@ url: "https://pandoly2.github.io" # Domain Name of host. [username].github.io fo
 permalink: pretty
 
 markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+  math_engine: mathjax
 
 
 exclude:

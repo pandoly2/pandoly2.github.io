@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko-KR" data-theme="light">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>수학개념 (Prerequisite for Machine Learning) - Pandoly2 - 생각나는대로</title>
+		<meta name="description" content="생각나는대로 적는 공간">
+		<meta name="keywords" content="pandoly2machine learningAIMath">
+		<base href="http://localhost:4000" />
+		
+    	<meta content="2022-04-18T00:00:00+00:00" property="article:published_time">
+    	<meta content="http://localhost:4000/about/" property="article:author">
+  		
+		<meta property="og:site_name" content="Pandoly2 - 생각나는대로">
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content="http://localhost:4000/Prerequisite-of-Math/"/>
+		<meta property="og:title" content="수학개념 (Prerequisite for Machine Learning) - Pandoly2 - 생각나는대로" />
+		<meta property="og:description" content="생각나는대로 적는 공간" />
+		<meta property="og:image" content="http://localhost:4000/assets/images/favicon.png"/>
+		<meta name="twitter:card" content="summary"/>
+		<meta property="twitter:title" content="수학개념 (Prerequisite for Machine Learning) - Pandoly2 - 생각나는대로" />
+		<meta property="twitter:description" content="생각나는대로 적는 공간" />
+		<meta property="twitter:image" content="http://localhost:4000/assets/images/favicon.png" />
+		<link rel="stylesheet" href="assets/css/highlight.css">
+		<link rel="stylesheet" href="assets/css/style.css">
+		<link rel="shortcut icon" href="assets/images/favicon.png" />
+		<link rel="alternate" type="application/atom+xml" title="Pandoly2 - 생각나는대로" href="http://localhost:4000/atom.xml">
+		<link rel="alternate" type="application/json" title="Pandoly2 - 생각나는대로" href="http://localhost:4000/feed.json" />
+		<link rel="sitemap" type="application/xml" title="sitemap" href="http://localhost:4000/sitemap.xml" />
+		<meta name="google-site-verification" content="XXX" />
+	</head>
+<body>
+<div class="container">
+	<div class="profile">
+		<a href="http://localhost:4000"><img src="assets/images/profile_paris.jpg" class="profile-image"></a>
+		<div class="profile-about">
+			<h2 style="margin-bottom: 0; font-weight: 700;">pandoly2</h2>
+			
+			
+			
+				<a href="https://instagram.com/pandoly2" target="_blank"><img src="assets/images/icon/instagram.svg" class="social-icon"></a>
+			
+			
+			
+				<a href="https://github.com/pandoly2" target="_blank"><img src="assets/images/icon/github.svg" class="social-icon"></a>
+			
+			
+			<a href="about"><img src="assets/images/icon/me.svg" class="social-icon"></a>
+			<br>
+			Software Engineer
+			<br>
+			<div class="mode" id="mode-switcher" onclick="toggleNightMode();">
+				<span></span>
+			</div>
+		</div>
+	</div>
+	
+<div class="post-header">
+	<div class="post-date">18.04.2022</div>
+	<div class="post-share">
+		Share:&nbsp; 
+		<a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/수학개념(PreRequisiteForMachineLearning)" target="_blank"><img src="assets/images/icon/facebook.svg" class="social-icon"></a>
+		<a href="https://twitter.com/intent/tweet?source=tweetbutton&amp;original_referer=http://localhost:4000/수학개념(PreRequisiteForMachineLearning)&amp;text=수학개념 (Prerequisite for Machine Learning) - http://localhost:4000/수학개념(PreRequisiteForMachineLearning)" target="_blank"><img src="assets/images/icon/twitter.svg" class="social-icon"></a>
+		<a href="https://api.whatsapp.com/send?text=http://localhost:4000/수학개념(PreRequisiteForMachineLearning)" target="_blank"><img src="assets/images/icon/whatsapp.svg" class="social-icon"></a>
+	</div>
+</div>
+
+<div class="blog-post-content">
+	<h1>수학개념 (Prerequisite for Machine Learning)</h1>
+	<h2 id="수치미분">수치미분</h2>
+
+<h3 id="미분으로-얻을-수-있는-insight">미분으로 얻을 수 있는 Insight</h3>
+<p>-&gt; 입력 변수 x가 미세하게 변할때, 함수 f(x)가 얼마나 변하는지 알 수 있는 식을 구해라. <br />
+ -&gt; 한수 f(x)는 입력 x의 미세한 변화에 얼마나 민감하게 반응하는지 알 수 있는 식을 구해라.      <br />
+<strong>Insight</strong> <br />
+ -&gt; 입력 x 를 현재 값에서 아주 조금 변화시키면, 함수 f(x)는 얼마나 변하는가? <br />
+ -&gt; 함수 f(x)는 입력 x의 미세한 변화에 얼마나 민감하게 반응하는가?</p>
+
+<font color="red"> 어떤 값 x가 아주조금 변할때 y값의 미세한 변화량을 나타내는 기울기 혹은 크기 </font>
+
+<h3 id="기본-미분-공식">기본 미분 공식</h3>
+<p>\(f'\left(x\right)\ =\ \frac{df\left(x\right)}{dx}\ =\lim _{\Delta x \to 0}{\frac{f\left(\left(x\ +\ \Delta x\right)\ -\ f\left(x\right)\right)}{\Delta x}}\)</p>
+
+<h3 id="중앙차미분">중앙차미분</h3>
+<p>\(f'\left(x\right)\ =\ \frac{df\left(x\right)}{dx}\ =\lim _{\Delta x\to 0}^{ }\frac{f\left(\left(x\ +\ \Delta x\right)\ -\ f\left(x\ -\ \Delta x\right)\right)}{2\Delta x}\)</p>
+
+<p><img src="/assets/images/blog_images/NumericalDifferentiation/Numerical_Differentiation.jpg" alt="Numerical_Differentiation" title="Numerical Differentiation" /></p>
+
+<p>참조 : <a href="https://blog.naver.com/PostView.naver?blogId=mykepzzang&amp;logNo=220072089756&amp;parentCategoryNo=&amp;categoryNo=16&amp;viewDate=&amp;isShowPopularPosts=false&amp;from=postView">https://blog.naver.com/PostView.naver?blogId=mykepzzang</a></p>
+
+<h3 id="편미분">편미분</h3>
+
+<p>예 ) \(f\left(x,\ y\right)\ =\ 2x\ +\ 3xy\ +\ y3\) 에 대해,</p>
+
+<ol>
+  <li>
+    <p>변수 x에 대하여 편미분 <br />
+\(\frac{\partial f\left(x,y\right)}{\partial x}\ =\ \frac{\partial \left(2x\ +\ 3xy\ +{y}^3\right)}{\partial x}\ =\ 2\ +\ 3y\)</p>
+  </li>
+  <li>
+    <p>변수 y에 대하여 편미분 <br />
+\(\frac{\partial f\left(x,y\right)}{\partial x}\ =\ \frac{\partial \left(2x\ +\ 3xy\ +{y}^3\right)}{\partial x}\ =\ 3x\ +\ 3y^2\)</p>
+  </li>
+</ol>
+
+<h3 id="chain-rule">Chain Rule</h3>
+<p>합성함수란 여러 함수로 구성된 함수로서, 이러한 합성함수를 미분하려면 ‘합성함수를 구성하는 각 함수의 미분의 곱’으로 나타내는 chain rule(연쇄 법칙) 이용
+Ref. NeoWizard PPT 5 page (개인용)</p>
+
+
+</div>
+<div class="tags-container">
+	
+		<a href="http://localhost:4000/tags/#pandoly2" class="post-tag">pandoly2</a>, 
+	
+		<a href="http://localhost:4000/tags/#machine+learning" class="post-tag">machine learning</a>, 
+	
+		<a href="http://localhost:4000/tags/#AI" class="post-tag">AI</a>, 
+	
+		<a href="http://localhost:4000/tags/#Math" class="post-tag">Math</a>
+	
+</div>
+<div class="navigation">
+	
+		<a class="prev" href="/what-is-the-machinlearning/">< 머신러닝 이란</a>
+	 
+</div>
+
+	<section class="comment-area w-100">
+		<div class="comment-wrapper">
+			<div id="disqus_thread" class="article-comments"></div>
+			<script>
+			(function() {
+			var d = document, s = d.createElement('script');
+			s.src = '//XXX.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+			})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		</div>
+	</section>
+
+	<div class="footer">
+		<span> 생각나는대로 적는 나만의 공간 <font color="red"> ♥ </font> <a href="https://pandoly2.github.io"><b>Blog pandoly2</b></a></span>
+	</div>
+</div>
+
+<script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        packages: ['base', 'ams']
+      },
+      loader: {
+        load: ['ui/menu', '[tex]/ams']
+      },
+      startup: {
+        ready() {
+          MathJax.startup.defaultReady();
+          const Macro = MathJax._.input.tex.Symbol.Macro;
+          const MapHandler = MathJax._.input.tex.MapHandler.MapHandler;
+          const Array = MathJax._.input.tex.ams.AmsMethods.default.Array;
+          const env = new Macro('psmallmatrix', Array, [null, '(', ')', 'c', '.333em', '.2em', 'S', 1]);
+          MapHandler.getMap('AMSmath-environment').add('psmallmatrix', env);
+        }
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+
+	<script src="assets/js/ephesus.js"></script>
+	<script type="text/javascript">
+		if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+			document.documentElement.setAttribute('data-theme', 'dark');
+			document.getElementById('mode-switcher').classList.add('active');
+		}
+	</script>
+
+	
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXX-00"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-XXXXXXXX-00');
+    </script>
+	
+</body>
+</html>

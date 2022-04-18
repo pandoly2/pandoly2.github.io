@@ -1,0 +1,19 @@
+I"<h2 id="미분으로-얻을-수-있는-insight">미분으로 얻을 수 있는 Insight</h2>
+<p>-&gt; 입력 변수 x가 미세하게 변할때, 함수 f(x)가 얼마나 변하는지 알 수 있는 식을 구해라. <br />
+ -&gt; 한수 f(x)는 입력 x의 미세한 변화에 얼마나 민감하게 반응하는지 알 수 있는 식을 구해라.     <br />
+ [Insight] <br />
+ -&gt; 입력 x 를 현재 값에서 아주 조금 변화시키면, 함수 f(x)는 얼마나 변하는가? <br />
+ -&gt; 함수 f(x)는 입력 x의 미세한 변화에 얼마나 민감하게 반응하는가?</p>
+
+<p><img src="/assets/images/blog_images/NumericalDifferentiation/Numerical_Differentiation.jpg" alt="Numerical_Differentiation" title="Numerical Differentiation" /></p>
+
+<p>참조 : <a href="https://blog.naver.com/PostView.naver?blogId=mykepzzang&amp;logNo=220072089756&amp;parentCategoryNo=&amp;categoryNo=16&amp;viewDate=&amp;isShowPopularPosts=false&amp;from=postView">https://blog.naver.com/PostView.naver?blogId=mykepzzang</a></p>
+
+<h2 id="편미분">편미분</h2>
+
+<h2 id="chain-rule">Chain Rule</h2>
+
+<p>인라인 수식: \(\sum_{i=0}^n i^2 = \frac{n(n+1)(2n+1)}{6}\)</p>
+
+\[\frac{\partial f\left(x,y\right)}{\partial x}\ =\ \frac{\partial \left(2x\ +\ 3xy\ +{y}^3\right)}{\partial x}\ =\ 2\ +\ 3y\]
+:ET

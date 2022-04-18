@@ -56,6 +56,8 @@ class HelloWorld {
 - 항목 3
 
 1. 첫번째
-2. 두번째
+2. 두번째   
+
+참조 : [마크다운 수식 넣는 법 링크](https://sukwonyun.github.io/jekyll/Jekyll-%ED%85%8C%EB%A7%88%EC%97%90%EC%84%9C-Latex-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/)
 
 끝.
