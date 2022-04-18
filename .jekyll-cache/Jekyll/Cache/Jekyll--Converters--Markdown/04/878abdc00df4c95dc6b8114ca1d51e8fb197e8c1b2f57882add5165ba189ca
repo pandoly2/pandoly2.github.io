@@ -1,0 +1,41 @@
+I"�	<h2 id="수치미분">수치미분</h2>
+
+<h3 id="미분으로-얻을-수-있는-insight">미분으로 얻을 수 있는 Insight</h3>
+<p>-&gt; 입력 변수 x가 미세하게 변할때, 함수 f(x)가 얼마나 변하는지 알 수 있는 식을 구해라. <br />
+ -&gt; 한수 f(x)는 입력 x의 미세한 변화에 얼마나 민감하게 반응하는지 알 수 있는 식을 구해라.      <br />
+<strong>Insight</strong> <br />
+ -&gt; 입력 x 를 현재 값에서 아주 조금 변화시키면, 함수 f(x)는 얼마나 변하는가? <br />
+ -&gt; 함수 f(x)는 입력 x의 미세한 변화에 얼마나 민감하게 반응하는가?</p>
+
+<font color="red"> 어떤 값 x가 아주조금 변할때 y값의 미세한 변화량을 나타내는 기울기 혹은 크기 </font>
+
+<h3 id="기본-미분-공식">기본 미분 공식</h3>
+<p>\(f'\left(x\right)\ =\ \frac{df\left(x\right)}{dx}\ =\lim _{\Delta x \to 0}{\frac{f\left(\left(x\ +\ \Delta x\right)\ -\ f\left(x\right)\right)}{\Delta x}}\)</p>
+
+<h3 id="중앙차미분">중앙차미분</h3>
+<p>\(f'\left(x\right)\ =\ \frac{df\left(x\right)}{dx}\ =\lim _{\Delta x\to 0}^{ }\frac{f\left(\left(x\ +\ \Delta x\right)\ -\ f\left(x\ -\ \Delta x\right)\right)}{2\Delta x}\)</p>
+
+<p><img src="/assets/images/blog_images/NumericalDifferentiation/Numerical_Differentiation.jpg" alt="Numerical_Differentiation" title="Numerical Differentiation" width="100%" height="100%" /></p>
+
+<p>참조 : <a href="https://blog.naver.com/PostView.naver?blogId=mykepzzang&amp;logNo=220072089756&amp;parentCategoryNo=&amp;categoryNo=16&amp;viewDate=&amp;isShowPopularPosts=false&amp;from=postView">https://blog.naver.com/PostView.naver?blogId=mykepzzang</a></p>
+
+<h3 id="편미분">편미분</h3>
+
+<p>예 ) \(f\left(x,\ y\right)\ =\ 2x\ +\ 3xy\ +\ y3\) 에 대해,</p>
+
+<ol>
+  <li>
+    <p>변수 x에 대하여 편미분 <br />
+\(\frac{\partial f\left(x,y\right)}{\partial x}\ =\ \frac{\partial \left(2x\ +\ 3xy\ +{y}^3\right)}{\partial x}\ =\ 2\ +\ 3y\)</p>
+  </li>
+  <li>
+    <p>변수 y에 대하여 편미분 <br />
+\(\frac{\partial f\left(x,y\right)}{\partial x}\ =\ \frac{\partial \left(2x\ +\ 3xy\ +{y}^3\right)}{\partial x}\ =\ 3x\ +\ 3y^2\)</p>
+  </li>
+</ol>
+
+<h3 id="chain-rule">Chain Rule</h3>
+<p>합성함수란 여러 함수로 구성된 함수로서, 이러한 합성함수를 미분하려면 ‘합성함수를 구성하는 각 함수의 미분의 곱’으로 나타내는 chain rule(연쇄 법칙) 이용
+Ref. NeoWizard PPT 5 page (개인용)</p>
+
+:ET

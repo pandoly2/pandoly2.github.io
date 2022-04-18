@@ -30,7 +30,7 @@ $$
 f'\left(x\right)\ =\ \frac{df\left(x\right)}{dx}\ =\lim _{\Delta x\to 0}^{ }\frac{f\left(\left(x\ +\ \Delta x\right)\ -\ f\left(x\ -\ \Delta x\right)\right)}{2\Delta x}
 $$
 
-![Numerical_Differentiation](/assets/images/blog_images/NumericalDifferentiation/Numerical_Differentiation.jpg "Numerical Differentiation"){: width:"100%" height:"100%"}
+![Numerical_Differentiation](/assets/images/blog_images/NumericalDifferentiation/Numerical_Differentiation.jpg "Numerical Differentiation"){: width="100%" height="100%"}
 
 
 
