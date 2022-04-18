@@ -4,7 +4,7 @@
  <title>Pandoly2 - 생각나는대로</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2022-04-18T06:21:31+00:00</updated>
+ <updated>2022-04-18T06:41:59+00:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>pandoly2</name>
@@ -13,10 +13,46 @@
 
  
  <entry>
+   <title>머신러닝 구분</title>
+   <link href="http://localhost:4000/Which-is-the-MachineLearning/"/>
+   <updated>2022-04-18T00:00:00+00:00</updated>
+   <id>http://localhost:4000/03-머신러닝구분</id>
+   <content type="html">&lt;h2 id=&quot;구분&quot;&gt;구분&lt;/h2&gt;
+&lt;p&gt;학습 방법에 따라 다음과 같이 나뉨&lt;/p&gt;
+
+&lt;h3 id=&quot;지도학습-supervised&quot;&gt;지도학습 (Supervised)&lt;/h3&gt;
+&lt;p&gt;: 입력 값(x)과 정답(t, label)을 포함하는 Training Data를 이용하여 학습하고, 그 학습된 결과를 바탕으로 미지의 데이터(Test Data)에 대해 미래 값을 예측(Predict)하는 방법 =&amp;gt; 대부분 머신러닝 문제는 지도학습에 해당됨.&lt;/p&gt;
+
+&lt;p&gt;ex)&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;시험공부 시간(입력)과 Pass/Fail(정답)을 이용하여 당락 여부 예측&lt;/li&gt;
+  &lt;li&gt;집 평수(입력)와 가격 데이터(정답) 이요하여 임의의 평수 가격 예측&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;*지도학습은 학습결과를 바탕으로, 미래의 무엇을 예측하느냐에 따라 회귀, 분류등으로 구분할 수 있음&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;회귀-regression&quot;&gt;회귀 (Regression)&lt;/h4&gt;
+&lt;p&gt;: Training Data를 이용하여 &lt;strong&gt;연속적인 (숫자) 값을 예측&lt;/strong&gt;하는 것을 말하며, 집평수와 가격 관계, 공부시간과 시험성적 등의 관계임.&lt;/p&gt;
+&lt;h4 id=&quot;분류-classification&quot;&gt;분류 (Classification)&lt;/h4&gt;
+&lt;p&gt;: Training Data를 이용하여 주어진 입력값이 &lt;strong&gt;어떤 종류&lt;/strong&gt;의 값인지 구별하는 것을 지칭함&lt;/p&gt;
+
+&lt;h3 id=&quot;비지도학습-unsupervised&quot;&gt;비지도학습 (Unsupervised)&lt;/h3&gt;
+&lt;p&gt;: Training Data에 정답은 없고 입력 데이터만 있기 때문에, 입력에 대한 정답을 찾는 것이 아닌 입력데이터의 패턴, 특성 등을 학습을 통해 발견하는 방법을 말함. &lt;br /&gt;
+ex)&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;군집화(Clustering) 알고리즘을 이용한 뉴스 그룹핑, 백화점의 상품 추천시스템 등&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;군집화-clustering&quot;&gt;군집화 (Clustering)&lt;/h4&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
    <title>수학개념 (Prerequisite for Machine Learning)</title>
    <link href="http://localhost:4000/Prerequisite-of-Math/"/>
    <updated>2022-04-18T00:00:00+00:00</updated>
-   <id>http://localhost:4000/수학개념(PreRequisiteForMachineLearning)</id>
+   <id>http://localhost:4000/02-수학개념(PreRequisiteForMachineLearning)</id>
    <content type="html">&lt;h2 id=&quot;수치미분&quot;&gt;수치미분&lt;/h2&gt;
 
 &lt;h3 id=&quot;미분으로-얻을-수-있는-insight&quot;&gt;미분으로 얻을 수 있는 Insight&lt;/h3&gt;
@@ -64,7 +100,7 @@ Ref. NeoWizard PPT 5 page (개인용)&lt;/p&gt;
    <title>머신러닝 이란</title>
    <link href="http://localhost:4000/what-is-the-machinlearning/"/>
    <updated>2022-04-18T00:00:00+00:00</updated>
-   <id>http://localhost:4000/머신러닝이란 copy</id>
+   <id>http://localhost:4000/01-인공지능이란</id>
    <content type="html">&lt;h2 id=&quot;4차-산업-혁명&quot;&gt;4차 산업 혁명&lt;/h2&gt;
 &lt;p&gt;2016년 스위스 다보스에서 개최된 세계경제 포럼에서 처음 언급됨&lt;/p&gt;
 

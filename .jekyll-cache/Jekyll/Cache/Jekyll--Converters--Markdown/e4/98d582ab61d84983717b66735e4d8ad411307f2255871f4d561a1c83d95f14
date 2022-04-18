@@ -1,0 +1,23 @@
+I"u<h2 id="구분">구분</h2>
+<p>학습 방법에 따라 다음과 같이 나뉨</p>
+
+<h3 id="지도학습-supervised">지도학습 (Supervised)</h3>
+<p>: 입력 값(x)과 정답(t, label)을 포함하는 Training Data를 이용하여 학습하고, 그 학습된 결과를 바탕으로 미지의 데이터(Test Data)에 대해 미래 값을 예측(Predict)하는 방법 =&gt; 대부분 머신러닝 문제는 지도학습에 해당됨.</p>
+
+<p>ex)</p>
+<ol>
+  <li>시험공부 시간(입력)과 Pass/Fail(정답)을 이용하여 당락 여부 예측</li>
+  <li>집 평수(입력)와 가격 데이터(정답) 이요하여 임의의 평수 가격 예측</li>
+</ol>
+
+<p><strong>*지도학습은 학습결과를 바탕으로, 미래의 무엇을 예측하느냐에 따라 회귀, 분류등으로 구분할 수 있음</strong></p>
+
+<h4 id="회귀-regression">회귀 (Regression)</h4>
+<p>: Training Data를 이용하여 <strong>연속적인 (숫자) 값을 예측</strong>하는 것을 말하며, 집평수와 가격 관계, 공부시간과 시험성적 등의 관계임.</p>
+<h4 id="분류-classification">분류 (Classification)</h4>
+<p>: Training Data를 이용하여 주어진 입력값이 <strong>어떤 종류</strong>의 값인지 구별하는 것을 지칭함</p>
+
+<h3 id="비지도학습-unsupervised">비지도학습 (Unsupervised)</h3>
+<h4 id="군집화-clustering">군집화 (Clustering)</h4>
+
+:ET
