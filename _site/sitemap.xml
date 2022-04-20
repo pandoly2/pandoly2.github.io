@@ -22,7 +22,15 @@
 </url>
 <url>
 <loc>http://localhost:4000/gradient-decent/</loc>
-<lastmod>2022-04-18T00:00:00+00:00</lastmod>
+<lastmod>2022-04-19T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/logistic-regression/</loc>
+<lastmod>2022-04-19T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/perceptron/</loc>
+<lastmod>2022-04-20T00:00:00+00:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/about/</loc>

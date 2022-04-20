@@ -4,7 +4,7 @@
  <title>Pandoly2 - 생각나는대로</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2022-04-18T14:18:06+00:00</updated>
+ <updated>2022-04-20T05:54:04+00:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>pandoly2</name>
@@ -13,11 +13,303 @@
 
  
  <entry>
+   <title>퍼셉트론 (perceptron)</title>
+   <link href="http://localhost:4000/perceptron/"/>
+   <updated>2022-04-20T00:00:00+00:00</updated>
+   <id>http://localhost:4000/01-퍼셉트론(perceptron)</id>
+   <content type="html">&lt;h3 id=&quot;퍼셉트론-아이디어&quot;&gt;퍼셉트론 아이디어&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;지금까지 정리한 linear regression , logistic regression과 같은 개념으로 여러개의 입력데이터를 받아 하나의 출력을 갖는 구조를 퍼셉트론이라고 부름.&lt;/li&gt;
+  &lt;li&gt;linear regression으로 최적의 구분선을 찾고 classification으로 데이터를 분류하는것이 개념적으로 동일해 보임.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;퍼셉트론-탄생&quot;&gt;퍼셉트론 탄생&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;퍼셉트론은 프랑크 로젠블라트가 1957년에 고안한 알고리즘입니다. (신경망(딥러닝)의 기원이 되는 알고리즘)&lt;/li&gt;
+  &lt;li&gt;퍼셉트론의 구조를 배우는 것은 신경망과 딥러닝으로 나아가는데 중요한 아이디어를 배우는 일.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;퍼셉트론이란&quot;&gt;퍼셉트론이란?&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog_images/Perceptron/perceptron_detail.png&quot; alt=&quot;perceptron_basic_0&quot; /&gt;
+출처 : WikiDocs&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;퍼셉트론은 다수의 신호를 입력으로 받아 하나의 신호를 출력 (신호 : 전류나 강물처럼 흐름이 있는 것)&lt;/li&gt;
+  &lt;li&gt;퍼셉트론의 신호는 ‘흐른다/안 흐른다(1이나 0)’의 두 가지 값을 가질수 있음.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog_images/Perceptron/perceptron.png&quot; alt=&quot;perceptron_basic&quot; /&gt;
+출처 : NeoWizard&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;x1과 x2는 입력신호, y는 출력 신호, w1과 w2는 가중치를 의미&lt;/li&gt;
+  &lt;li&gt;원을 &lt;strong&gt;뉴런&lt;/strong&gt; 또는 &lt;strong&gt;노드&lt;/strong&gt;라고 부른다&lt;/li&gt;
+  &lt;li&gt;입력 신호가 뉴런에 보내질 때는 각각 고유한 가중치가 곱해진다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;뉴런에서 전달 받은 신호의 총합이 임계값 θ를 넘을때만 1을 출력한다 (활성화 함수 or classification 함수)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;수식 : 
+ \(y\ =\ \begin{cases}0\ \left({w}_1{x}_1\ +\ {w}_2{x}_2\ \le \ \theta \right)\\1\ \left({w}_1x_1\ +\ {w}_2x_2\ &amp;gt;\ \theta \right)\end{cases}\)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;퍼셉트론은 복수의 입력 신호 각각에 가중치를 부여한다. 가중치는 각 신호가 결과에 주는 영향력을 조절하는 요소로 작용하며, 가중치가 클수록 해당 신호가 그만큼 더 중요함을 뜻한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;퍼셉트론의-대표적인-예-단순논리회로---and-or-nad-xor-문제&quot;&gt;퍼셉트론의 대표적인 예 단순논리회로 - AND, OR, NAD, XOR 문제&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;우리는 다수의 입력에대하여 하나의 출력을 나타내는 단순한 논리회로를 퍼셉트론으로 나타낼수 있다. 
+ (명칭은 퍼셉트론이라고 하지만 개념적으로는 적절한 선을 찾고(linear regression)그에 따른 분류를하는 것(classification))&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;and-gate&quot;&gt;AND Gate&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog_images/Perceptron/perceptron_and.png&quot; alt=&quot;perceptron_and_gate&quot; /&gt;
+출처 : NeoWizard&lt;/p&gt;
+
+&lt;p&gt;입력 x1, x2에대해 아래의의 수식에 대입해보면 만족하는 w1, w2, θ값을 여러개 찾을 수 있다. &lt;br /&gt;
+그중 하나의 예는 (0.5, 0.5, 0,7)&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;수식 : 
+ \(y\ =\ \begin{cases}0\ \left({w}_1{x}_1\ +\ {w}_2{x}_2\ \le \ \theta \right)\\1\ \left({w}_1x_1\ +\ {w}_2x_2\ &amp;gt;\ \theta \right)\end{cases}\)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;이를 시각화하면 다음과 같은 그림이다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog_images/Perceptron/perceptron_v_and.png&quot; alt=&quot;perceptron_v_and&quot; /&gt;
+출처 : WikiDocs&lt;/p&gt;
+
+&lt;h4 id=&quot;nand-gate&quot;&gt;NAND Gate&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog_images/Perceptron/perceptron_nand.png&quot; alt=&quot;perceptron_nand_gate&quot; /&gt;
+출처 : NeoWizard&lt;/p&gt;
+
+&lt;p&gt;입력 x1, x2에대해 아래의의 수식에 대입해보면 만족하는 w1, w2, θ값을 여러개 찾을 수 있다. &lt;br /&gt;
+그중 하나의 예는 (-0.5, -0.5, -0,7)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;시각화 &lt;br /&gt;
+&lt;img src=&quot;/assets/images/blog_images/Perceptron/perceptron_v_nand.png&quot; alt=&quot;perceptron_v_nand&quot; /&gt;
+출처 : WikiDocs&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;or-gate&quot;&gt;OR Gate&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog_images/Perceptron/perceptron_or.png&quot; alt=&quot;perceptron_or_gate&quot; /&gt;
+출처 : NeoWizard&lt;/p&gt;
+
+&lt;p&gt;입력 x1, x2에대해 아래의의 수식에 대입해보면 만족하는 w1, w2, θ값을 여러개 찾을 수 있다. &lt;br /&gt;
+그중 하나의 예는 (0.5, 0.5, 0,2)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;시각화 &lt;br /&gt;
+&lt;img src=&quot;/assets/images/blog_images/Perceptron/perceptron_v_or.png&quot; alt=&quot;perceptron_v_or&quot; /&gt;
+출처 : WikiDocs&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;가중치와-편향-수식&quot;&gt;가중치와 편향 수식&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;위의 식에서 θ를 b(bias)로 변경하여 식을 나타내면 다음과같다. 
+ 즉, regression 에서도 확인했듯이 최적의 가중치와 바이어스를 찾는 문제와 같다.
+ 찾은 가중치와 바이어스에 의한 결과값이 0보다 큰지 작은지에 대한 분류 문제인것이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+\[y\ =\ \begin{cases}0\ \left({w}_1{x}_1\ +\ {w}_2{x}_2\ +\ b\le \ 0\right)\\1\ \left({w}_1x_1\ +\ {w}_2x_2\ \ +\ b&amp;gt;\ 0\right)\end{cases}\]
+
+&lt;h3 id=&quot;단일-퍼셉트론의-문제---논리회로-xor&quot;&gt;단일 퍼셉트론의 문제 - 논리회로 XOR&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;다음은 XOR의 진리표이다.&lt;/li&gt;
+  &lt;li&gt;배타적 논리합이라는 논리 회로로 x1, x2 한쪽이 1일때만 1을 출력한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog_images/Perceptron/perceptron_xor.png&quot; alt=&quot;perceptron_xor&quot; /&gt;
+출처 : NeoWizard&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;시각화 &lt;br /&gt;
+&lt;img src=&quot;/assets/images/blog_images/Perceptron/perceptron_v_xor_0.png&quot; alt=&quot;perceptron_v_xor_0&quot; /&gt;
+출처 : NeoWizard&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;XOR은 위의 그림과같이 하나의 직선으로 두영역을 나눌수없다.&lt;/li&gt;
+  &lt;li&gt;만약 직선 즉, 선형이라는 제약이 없다면 비선형으로 다음과 같이 나눌수 있을것이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog_images/Perceptron/perceptron_v_xor_1.png&quot; alt=&quot;perceptron_v_xor_1&quot; /&gt;
+출처 : NeoWizard&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;하지만 비선형적 곡선을 나타내기어렵다.&lt;/li&gt;
+  &lt;li&gt;우리는 여러개의 퍼셉트론을 엮어서 비선형처럼 만들수있다. (여러개의 직선)&lt;/li&gt;
+  &lt;li&gt;이 아이디어가 다층 퍼셉트론으로 단일 퍼셉트론의 한계를 극복했다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog_images/Perceptron/perceptron_v_xor_2.png&quot; alt=&quot;perceptron_v_xor_2&quot; /&gt;
+출처 : Wikidocs&lt;/p&gt;
+
+&lt;h4 id=&quot;xor-문제의-솔루션&quot;&gt;XOR 문제의 솔루션&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;단일 퍼셉트론 OR, NAND, AND를 결합하여 XOR을 만들었다.&lt;/li&gt;
+  &lt;li&gt;입력 x1, x2를 각각(OR, NAND)의 gate에 입력으로 사용하고 그 출력을 다시 AND의 입력으로 사용한다.&lt;/li&gt;
+  &lt;li&gt;이렇게 함으로써 단일 직선으로 해결하기 어려웠던 문제를 해결 할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog_images/Perceptron/perceptron_xor_solution.png&quot; alt=&quot;perceptron_xor_solution&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;xor-논리게이트의-상세-diagram&quot;&gt;XOR 논리게이트의 상세 Diagram&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;XOR의 논리게이트로 표현된 위의 그림을 우리가 학습했던 linear regression과 classification으로 표현하면 다음과 같다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog_images/Perceptron/perceptron_xor_detail_solution.png&quot; alt=&quot;perceptron_xor_detail_solution&quot; /&gt;&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Logistic Regression</title>
+   <link href="http://localhost:4000/logistic-regression/"/>
+   <updated>2022-04-19T00:00:00+00:00</updated>
+   <id>http://localhost:4000/02-logistic-regression</id>
+   <content type="html">&lt;h2 id=&quot;분류-classification&quot;&gt;분류 (classification)&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Training data 특성과 관계 등을 파악 한 후에, 미지의 입력 데이터에 대해서 결과가 어떤 종류의 값으로 분류 될 수 있는지를 예측하는것.
+ 예) 스팸문자 분류&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog_images/classification/classification.png&quot; alt=&quot;classification_image&quot; width=&quot;100%&quot; /&gt;
+출처 : NeoWizard&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;즉, Logistic Regression 알고리즘은,
+    &lt;ol&gt;
+      &lt;li&gt;Training data 특성과 분포를 나타내는 최적의 직선을 찾고(linear regression)&lt;/li&gt;
+      &lt;li&gt;그 직선을 기준으로 데이터를 위(1) 또는 아래(0) 등으로 분류(Classification) 해주는 알고리즘&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;이러한 Logistic Regression은 Classification 알고리즘 중에서도 정확도가 높은 알고리즘으로 알려져 있어서 Deep learning에서 기본 component로 사용되고 있다고함.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog_images/classification/classification_simple_flow.png&quot; alt=&quot;classification_simple&quot; width=&quot;100%&quot; height=&quot;100%&quot; /&gt;
+출처 : NeoWizard&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;출력 값 y가 0 또는 1 만을 가져야하는 분류 시스템에서, 분류 함수로 sigmoid함수를 사용하여 0/1 값을 갖게 할 수 있음&lt;/li&gt;
+  &lt;li&gt;즉, linear regression 출력 Wx + b 가 어떤 값을 갖더라도, 출력 함수로 sigmoid 를 사용해서
+    &lt;ol&gt;
+      &lt;li&gt;sigmoid 계산 값이 0.5보다 크면 결과로 1이 나올 확률이 높다는 것이기 때문에 출력 값 y는 1을 정의&lt;/li&gt;
+      &lt;li&gt;sigmoid 계산 값이 0.5 미만이면 결과로 0 이 나올 확률이 높다는 것이므로 출력 값 y는 0을 정의&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;0 또는 1을 분류하는 classification system 구현 할 수 있음.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Sigmoid 식 : 
+ \(y\ =\ sigmoid\left(z\right)\ =\ \phi \left(z\right)\ =\ \frac{1}{1\ +\ {e}^{-z}}\)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog_images/classification/classification_sigmoid_graph.png&quot; alt=&quot;classification_sigmoid&quot; /&gt;
+ 출처 : NeoWizard&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;분류 시스템 최종 출력 값 y는 sigmoid 함수에 의해 논리적으로 1 또는 0 값을 가지기 때문에, 연속 값을 갖는 선형회귀 때와는 다른 손실함수 필요함.&lt;/li&gt;
+  &lt;li&gt;손실함수 (cross-entropy) 식 :&lt;/li&gt;
+&lt;/ul&gt;
+
+\[y\ =\ \frac{1}{1\ +\ {e}^{-1\left(Wx\ +b\right)}}\ ,\ t_i\ =\ 0\ or\ 1\]
+
+\[E\left(W,\ b\right)\ =\ -\ \sum _{i\ =\ 1}^n\left\{t_i\log {y_i\ }+\ \left(1-t_i\right)\log {\left(1\ -\ y_i\right)}\right\}\]
+
+&lt;ul&gt;
+  &lt;li&gt;classification 최종 출력 값 y 는 sigmoid 함수 에 의해 0 ~ 1 사이의 값을 갖는 확률적인 분류 모델이므로, 다음과 같이 확률변수 C 를 이용해 출력 값을 나타낼 수 있음.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;TBD: 이해하고 다시 작성&lt;/strong&gt;&lt;/p&gt;
+&lt;font color=&quot;red&quot;&gt;★ NeoWizard ppt 62page 참조&lt;/font&gt;
+
+&lt;h3 id=&quot;logistic-regression-flow&quot;&gt;logistic regression flow&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog_images/classification/logistic_regression_flow.png&quot; alt=&quot;classification_flow&quot; /&gt;&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
    <title>경사하강법 (Gradient decent algorithm)</title>
    <link href="http://localhost:4000/gradient-decent/"/>
-   <updated>2022-04-18T00:00:00+00:00</updated>
-   <id>http://localhost:4000/05-경사하강법</id>
-   <content type="html">
+   <updated>2022-04-19T00:00:00+00:00</updated>
+   <id>http://localhost:4000/01-경사하강법</id>
+   <content type="html">&lt;h2 id=&quot;손실함수&quot;&gt;손실함수&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;손실함수는 오차의 평균값을 나타내기 때문에, 손실함수가 최소값을 갖는다는 것은 실제 정답과 계산 값의 차이인 오차가 최소가 되어, 미지의 데이터에 대해서 결과를 잘 예측 할 수 있다는 것을 의미함.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;손실함수는 W, b 에 영향을 받기 때문에, &lt;strong&gt;손실함수가 최소가 되는 가중치 W와 바이어스 b를 찾는 것&lt;/strong&gt;이 regression을 구현하는 최종 목표.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;손실함수-식&quot;&gt;손실함수 식&lt;/h4&gt;
+
+\[loss\ function= E(W,\ b) = \frac{\left({t}_1\ -\ y_1\right)^2\ +\left({t}_2\ -\ y_2\right)^2\ +\ \left({t}_3\ -\ y_3\right)^2\ +\ ...\ \ +\ \left({t}_n\ -\ y_n\right)^2\ \ }{n}\]
+
+\[=\frac{\left[{t}_1\ -\ \left(Wx_1\ +\ b\right)\right]^2\ +\ \left[{t}_2\ -\ \left(Wx_2\ +\ b\right)\right]^2\ +\ ...\ +\ \left[{t}_n\ -\ \left(Wx_n\ +\ b\right)\right]^2\ \ }{n}\]
+
+\[=\frac{1}{n}\sum _{i=1}^n\left[t_i\ -\ \left(Wx_i\ +\ b\right)\right]^2\]
+
+&lt;h3 id=&quot;손실함수-최적화-기술&quot;&gt;손실함수 최적화 기술&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;경사하강법&lt;/li&gt;
+  &lt;li&gt;배치 경사하강법&lt;/li&gt;
+  &lt;li&gt;확률적 경사하강법&lt;/li&gt;
+  &lt;li&gt;미니 배치 경사하강법&lt;/li&gt;
+  &lt;li&gt;모멘텀&lt;/li&gt;
+  &lt;li&gt;아담&lt;/li&gt;
+  &lt;li&gt;참고 : &lt;a href=&quot;https://truman.tistory.com/164&quot;&gt;https://truman.tistory.com/164&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;경사하강법-이해하기&quot;&gt;경사하강법 이해하기&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;가정&lt;/strong&gt; &lt;br /&gt;
+ E(W, b)에서 바이어스 b = 0으로 가정 (계산을 쉽게하고 손실함수의 모양을 파악하기 위해)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;다음과 같은 training data set가 있을때, &lt;br /&gt;
+&lt;img src=&quot;/assets/images/blog_images/Gradient/gradient_training_data.png&quot; alt=&quot;gradient_training_data&quot; /&gt;
+출처 : NeoWizard&lt;/li&gt;
+  &lt;li&gt;W 값에대한 손실함수 E(W, b) 계산 결과는 다음과 같다. &lt;br /&gt;
+&lt;img src=&quot;/assets/images/blog_images/Gradient/gradient_loss_functiono_result.png&quot; alt=&quot;gradient_loss_function_result&quot; /&gt;
+출처 : NeoWizard&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;loss function의 계산 결과를 그래프로 나타냈을때 다음과 같다. &lt;br /&gt;
+&lt;img src=&quot;/assets/images/blog_images/Gradient/gradient_data_of_loss_fuction_result.png&quot; alt=&quot;gradient_data_of_loss_result&quot; /&gt;
+출처 : NeoWizard
+&lt;img src=&quot;/assets/images/blog_images/Gradient/gradient_graph.png&quot; alt=&quot;gradient_graph&quot; /&gt;
+출처 : NeoWizard&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;그러면, 우리가 어떤 가중치를 임의로 설정했을때 최소값을 찾아가는 방법은 뭘까?&lt;/li&gt;
+  &lt;li&gt;아래와같은 방법을 생각해 볼 수 있다. &lt;br /&gt;
+ &lt;img src=&quot;/assets/images/blog_images/Gradient/gradient_decent.png&quot; alt=&quot;gradient_graph&quot; /&gt;
+ 출처 : NeoWizard&lt;/li&gt;
+  &lt;li&gt;방법은 아래와 같이 기울기가 &lt;strong&gt;작아지는쪽&lt;/strong&gt;으로 이동 시키면된다. (가장낮은쪽으로 이동)   &lt;br /&gt;
+ W 에서의 편미분 𝜕E(W)/𝜕W 가 해당 W 에서 기울기를 나타냄 &lt;br /&gt;
+ 𝜕E(W)/𝜕W 양수값을 갖는다면 W는 왼쪽으로 이동 &lt;br /&gt;
+ 𝜕E(W)/𝜕W 음수값을 갖는다면 W는 오른쪽으로 이동&lt;/li&gt;
+  &lt;li&gt;식,&lt;br /&gt;
+ W(weight) 가중치 : 
+ \(w\ =\ w\ -\ \alpha \ \cdot \ \frac{\partial E\left(W,\ b\right)}{\partial w}\)
+, b(bias) 바이어스 : 
+\(b\ =\ b\ -\ \alpha \ \cdot \ \frac{\partial E\left(W,\ b\right)}{\partial b}\)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(※ \(\alpha\) 는 학습율(learning rate)라고 부르며, W 값의 감소 또는 증가 되는 비율을 나타냄) &lt;br /&gt;
+ &lt;img src=&quot;/assets/images/blog_images/Gradient/gradient_decent2.png&quot; alt=&quot;gradient_graph&quot; /&gt;
+ 출처 : NeoWizard&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;이처럼, W에서의 직선의 기울기인 미분 값을 이용하여, 그 값이 작아지는 방향으로 진행하여 손실함수 최소값을 찾는 방법을 &lt;font color=&quot;red&quot;&gt; 경사하강법 (gradient decent algorithm) &lt;/font&gt; 이라고 한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;전체-학습-flow-linear-regression&quot;&gt;전체 학습 Flow (linear regression)&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog_images/Gradient/Gradient_decent_flow(linear_regression).png&quot; alt=&quot;gradient_flow&quot; width=&quot;100%&quot; height=&quot;100%&quot; /&gt;&lt;/p&gt;
+
 </content>
  </entry>
  
@@ -73,6 +365,9 @@
   &lt;/li&gt;
   &lt;li&gt;즉, 머신러닝의 Regression 시스템은, &lt;strong&gt;모든 데이터&lt;/strong&gt;의 &lt;font color=&quot;red&quot;&gt; 오차(error) = t - y = t - (Wx + b)&lt;/font&gt;의 합이 최소가 되서, 미래 값을 잘 예측할 수 있는 가중치 W와 바이어스 b값을 찾아야 한다.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h3 id=&quot;전체-학습-flow-linear-regression&quot;&gt;전체 학습 Flow (linear regression)&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog_images/Gradient/Gradient_decent_flow(linear_regression).png&quot; alt=&quot;gradient_flow&quot; width=&quot;100%&quot; height=&quot;100%&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;손실함수-loss-function&quot;&gt;손실함수 (loss function)&lt;/h3&gt;
 &lt;ul&gt;

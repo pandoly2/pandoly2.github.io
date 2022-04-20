@@ -1,0 +1,112 @@
+I"w<h3 id="퍼셉트론-아이디어">퍼셉트론 아이디어</h3>
+<ul>
+  <li>지금까지 정리한 linear regression , logistic regression과 같은 개념으로 여러개의 입력데이터를 받아 하나의 출력을 갖는 구조를 퍼셉트론이라고 부름.</li>
+  <li>linear regression으로 최적의 구분선을 찾고 classification으로 데이터를 분류하는것이 개념적으로 동일해 보임.</li>
+</ul>
+
+<h3 id="퍼셉트론-탄생">퍼셉트론 탄생</h3>
+<ul>
+  <li>퍼셉트론은 프랑크 로젠블라트가 1957년에 고안한 알고리즘입니다. (신경망(딥러닝)의 기원이 되는 알고리즘)</li>
+  <li>퍼셉트론의 구조를 배우는 것은 신경망과 딥러닝으로 나아가는데 중요한 아이디어를 배우는 일.</li>
+</ul>
+
+<h3 id="퍼셉트론이란">퍼셉트론이란?</h3>
+<p><img src="/assets/images/blog_images/Perceptron/perceptron_detail.png" alt="perceptron_basic_0" />
+출처 : WikiDocs</p>
+
+<ul>
+  <li>퍼셉트론은 다수의 신호를 입력으로 받아 하나의 신호를 출력 (신호 : 전류나 강물처럼 흐름이 있는 것)</li>
+  <li>퍼셉트론의 신호는 ‘흐른다/안 흐른다(1이나 0)’의 두 가지 값을 가질수 있음.</li>
+</ul>
+
+<p><img src="/assets/images/blog_images/Perceptron/perceptron.png" alt="perceptron_basic" />
+출처 : NeoWizard</p>
+
+<ul>
+  <li>x1과 x2는 입력신호, y는 출력 신호, w1과 w2는 가중치를 의미</li>
+  <li>원을 <strong>뉴런</strong> 또는 <strong>노드</strong>라고 부른다</li>
+  <li>입력 신호가 뉴런에 보내질 때는 각각 고유한 가중치가 곱해진다.</li>
+  <li>
+    <p>뉴런에서 전달 받은 신호의 총합이 임계값 θ를 넘을때만 1을 출력한다 (활성화 함수 or classification 함수)</p>
+  </li>
+  <li>
+    <p>수식 : 
+ \(y\ =\ \begin{cases}0\ \left({w}_1{x}_1\ +\ {w}_2{x}_2\ \le \ \theta \right)\\1\ \left({w}_1x_1\ +\ {w}_2x_2\ &gt;\ \theta \right)\end{cases}\)</p>
+  </li>
+  <li>퍼셉트론은 복수의 입력 신호 각각에 가중치를 부여한다. 가중치는 각 신호가 결과에 주는 영향력을 조절하는 요소로 작용하며, 가중치가 클수록 해당 신호가 그만큼 더 중요함을 뜻한다.</li>
+</ul>
+
+<h3 id="퍼셉트론의-대표적인-예-단순논리회로---and-or-nad-xor-문제">퍼셉트론의 대표적인 예 단순논리회로 - AND, OR, NAD, XOR 문제</h3>
+<ul>
+  <li>우리는 다수의 입력에대하여 하나의 출력을 나타내는 단순한 논리회로를 퍼셉트론으로 나타낼수 있다. 
+ (명칭은 퍼셉트론이라고 하지만 개념적으로는 적절한 선을 찾고(linear regression)그에 따른 분류를하는 것(classification))</li>
+</ul>
+
+<h4 id="and-gate">AND Gate</h4>
+<p><img src="/assets/images/blog_images/Perceptron/perceptron_and.png" alt="perceptron_and_gate" />
+출처 : NeoWizard</p>
+
+<p>입력 x1, x2에대해 아래의의 수식에 대입해보면 만족하는 w1, w2, θ값을 여러개 찾을 수 있다. <br />
+그중 하나의 예는 (0.5, 0.5, 0,7)</p>
+<ul>
+  <li>
+    <p>수식 : 
+ \(y\ =\ \begin{cases}0\ \left({w}_1{x}_1\ +\ {w}_2{x}_2\ \le \ \theta \right)\\1\ \left({w}_1x_1\ +\ {w}_2x_2\ &gt;\ \theta \right)\end{cases}\)</p>
+  </li>
+  <li>
+    <p>이를 시각화하면 다음과 같은 그림이다.</p>
+  </li>
+</ul>
+
+<p><img src="/assets/images/blog_images/Perceptron/perceptron_v_and.png" alt="perceptron_v_and" />
+출처 : WikiDocs</p>
+
+<h4 id="nand-gate">NAND Gate</h4>
+<p><img src="/assets/images/blog_images/Perceptron/perceptron_nand.png" alt="perceptron_nand_gate" />
+출처 : NeoWizard</p>
+
+<p>입력 x1, x2에대해 아래의의 수식에 대입해보면 만족하는 w1, w2, θ값을 여러개 찾을 수 있다. <br />
+그중 하나의 예는 (-0.5, -0.5, -0,7)</p>
+
+<ul>
+  <li>시각화 <br />
+<img src="/assets/images/blog_images/Perceptron/perceptron_v_nand.png" alt="perceptron_v_nand" />
+출처 : WikiDocs</li>
+</ul>
+
+<h4 id="or-gate">OR Gate</h4>
+<p><img src="/assets/images/blog_images/Perceptron/perceptron_or.png" alt="perceptron_or_gate" />
+출처 : NeoWizard</p>
+
+<p>입력 x1, x2에대해 아래의의 수식에 대입해보면 만족하는 w1, w2, θ값을 여러개 찾을 수 있다. <br />
+그중 하나의 예는 (0.5, 0.5, 0,2)</p>
+
+<ul>
+  <li>시각화 <br />
+<img src="/assets/images/blog_images/Perceptron/perceptron_v_or.png" alt="perceptron_v_or" /></li>
+</ul>
+
+<h4 id="가중치와-편향-수식">가중치와 편향 수식</h4>
+<ul>
+  <li>위의 식에서 θ를 b(bias)로 변경하여 식을 나타내면 다음과같다. 
+ 즉, regression 에서도 확인했듯이 최적의 가중치와 바이어스를 찾는 문제와 같다.
+ 찾은 가중치와 바이어스에 의한 결과값이 0보다 큰지 작은지에 대한 분류 문제인것이다.</li>
+</ul>
+
+\[y\ =\ \begin{cases}0\ \left({w}_1{x}_1\ +\ {w}_2{x}_2\ +\ b\le \ 0\right)\\1\ \left({w}_1x_1\ +\ {w}_2x_2\ \ +\ b&gt;\ 0\right)\end{cases}\]
+
+<h2 id="단일-퍼셉트론의-문제---논리회로-xor">단일 퍼셉트론의 문제 - 논리회로 XOR</h2>
+
+<ul>
+  <li>다음은 XOR의 진리표이다.</li>
+  <li>배타적 논리합이라는 논리 회로로 x1, x2 한쪽이 1일때만 1을 출력한다.</li>
+</ul>
+
+<p><img src="/assets/images/blog_images/Perceptron/perceptron_xor.png" alt="perceptron_v_xor_0" /></p>
+
+<ul>
+  <li>시각화
+<img src="/assets/images/blog_images/Perceptron/perceptron_v_xor_0.png.png" alt="perceptron_v_xor_0" /></li>
+</ul>
+
+:ET

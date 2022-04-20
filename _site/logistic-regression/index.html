@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko-KR" data-theme="light">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Logistic Regression - Pandoly2 - 생각나는대로</title>
+		<meta name="description" content="생각나는대로 적는 공간">
+		<meta name="keywords" content="pandoly2machine learningAI">
+		<base href="http://localhost:4000" />
+		
+    	<meta content="2022-04-19T00:00:00+00:00" property="article:published_time">
+    	<meta content="http://localhost:4000/about/" property="article:author">
+  		
+		<meta property="og:site_name" content="Pandoly2 - 생각나는대로">
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content="http://localhost:4000/logistic-regression/"/>
+		<meta property="og:title" content="Logistic Regression - Pandoly2 - 생각나는대로" />
+		<meta property="og:description" content="생각나는대로 적는 공간" />
+		<meta property="og:image" content="http://localhost:4000/assets/images/favicon.png"/>
+		<meta name="twitter:card" content="summary"/>
+		<meta property="twitter:title" content="Logistic Regression - Pandoly2 - 생각나는대로" />
+		<meta property="twitter:description" content="생각나는대로 적는 공간" />
+		<meta property="twitter:image" content="http://localhost:4000/assets/images/favicon.png" />
+		<link rel="stylesheet" href="assets/css/highlight.css">
+		<link rel="stylesheet" href="assets/css/style.css">
+		<link rel="shortcut icon" href="assets/images/favicon.png" />
+		<link rel="alternate" type="application/atom+xml" title="Pandoly2 - 생각나는대로" href="http://localhost:4000/atom.xml">
+		<link rel="alternate" type="application/json" title="Pandoly2 - 생각나는대로" href="http://localhost:4000/feed.json" />
+		<link rel="sitemap" type="application/xml" title="sitemap" href="http://localhost:4000/sitemap.xml" />
+		<meta name="google-site-verification" content="XXX" />
+	</head>
+<body>
+<div class="container">
+	<div class="profile">
+		<a href="http://localhost:4000"><img src="assets/images/profile_paris.jpg" class="profile-image"></a>
+		<div class="profile-about">
+			<h2 style="margin-bottom: 0; font-weight: 700;">pandoly2</h2>
+			
+			
+			
+				<a href="https://instagram.com/pandoly2" target="_blank"><img src="assets/images/icon/instagram.svg" class="social-icon"></a>
+			
+			
+			
+				<a href="https://github.com/pandoly2" target="_blank"><img src="assets/images/icon/github.svg" class="social-icon"></a>
+			
+			
+			<a href="about"><img src="assets/images/icon/me.svg" class="social-icon"></a>
+			<br>
+			Software Engineer
+			<br>
+			<div class="mode" id="mode-switcher" onclick="toggleNightMode();">
+				<span></span>
+			</div>
+		</div>
+	</div>
+	
+<div class="post-header">
+	<div class="post-date">19.04.2022</div>
+	<div class="post-share">
+		Share:&nbsp; 
+		<a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/02-logistic-regression" target="_blank"><img src="assets/images/icon/facebook.svg" class="social-icon"></a>
+		<a href="https://twitter.com/intent/tweet?source=tweetbutton&amp;original_referer=http://localhost:4000/02-logistic-regression&amp;text=Logistic Regression - http://localhost:4000/02-logistic-regression" target="_blank"><img src="assets/images/icon/twitter.svg" class="social-icon"></a>
+		<a href="https://api.whatsapp.com/send?text=http://localhost:4000/02-logistic-regression" target="_blank"><img src="assets/images/icon/whatsapp.svg" class="social-icon"></a>
+	</div>
+</div>
+
+<div class="blog-post-content">
+	<h1>Logistic Regression</h1>
+	<h2 id="분류-classification">분류 (classification)</h2>
+<ul>
+  <li>Training data 특성과 관계 등을 파악 한 후에, 미지의 입력 데이터에 대해서 결과가 어떤 종류의 값으로 분류 될 수 있는지를 예측하는것.
+ 예) 스팸문자 분류</li>
+</ul>
+
+<p><img src="/assets/images/blog_images/classification/classification.png" alt="classification_image" width="100%" />
+출처 : NeoWizard</p>
+
+<ul>
+  <li>즉, Logistic Regression 알고리즘은,
+    <ol>
+      <li>Training data 특성과 분포를 나타내는 최적의 직선을 찾고(linear regression)</li>
+      <li>그 직선을 기준으로 데이터를 위(1) 또는 아래(0) 등으로 분류(Classification) 해주는 알고리즘</li>
+    </ol>
+  </li>
+  <li>이러한 Logistic Regression은 Classification 알고리즘 중에서도 정확도가 높은 알고리즘으로 알려져 있어서 Deep learning에서 기본 component로 사용되고 있다고함.</li>
+</ul>
+
+<p><img src="/assets/images/blog_images/classification/classification_simple_flow.png" alt="classification_simple" width="100%" height="100%" />
+출처 : NeoWizard</p>
+<ul>
+  <li>출력 값 y가 0 또는 1 만을 가져야하는 분류 시스템에서, 분류 함수로 sigmoid함수를 사용하여 0/1 값을 갖게 할 수 있음</li>
+  <li>즉, linear regression 출력 Wx + b 가 어떤 값을 갖더라도, 출력 함수로 sigmoid 를 사용해서
+    <ol>
+      <li>sigmoid 계산 값이 0.5보다 크면 결과로 1이 나올 확률이 높다는 것이기 때문에 출력 값 y는 1을 정의</li>
+      <li>sigmoid 계산 값이 0.5 미만이면 결과로 0 이 나올 확률이 높다는 것이므로 출력 값 y는 0을 정의</li>
+    </ol>
+  </li>
+  <li>
+    <p>0 또는 1을 분류하는 classification system 구현 할 수 있음.</p>
+  </li>
+  <li>Sigmoid 식 : 
+ \(y\ =\ sigmoid\left(z\right)\ =\ \phi \left(z\right)\ =\ \frac{1}{1\ +\ {e}^{-z}}\)</li>
+</ul>
+
+<p><img src="/assets/images/blog_images/classification/classification_sigmoid_graph.png" alt="classification_sigmoid" />
+ 출처 : NeoWizard</p>
+
+<ul>
+  <li>분류 시스템 최종 출력 값 y는 sigmoid 함수에 의해 논리적으로 1 또는 0 값을 가지기 때문에, 연속 값을 갖는 선형회귀 때와는 다른 손실함수 필요함.</li>
+  <li>손실함수 (cross-entropy) 식 :</li>
+</ul>
+
+\[y\ =\ \frac{1}{1\ +\ {e}^{-1\left(Wx\ +b\right)}}\ ,\ t_i\ =\ 0\ or\ 1\]
+
+\[E\left(W,\ b\right)\ =\ -\ \sum _{i\ =\ 1}^n\left\{t_i\log {y_i\ }+\ \left(1-t_i\right)\log {\left(1\ -\ y_i\right)}\right\}\]
+
+<ul>
+  <li>classification 최종 출력 값 y 는 sigmoid 함수 에 의해 0 ~ 1 사이의 값을 갖는 확률적인 분류 모델이므로, 다음과 같이 확률변수 C 를 이용해 출력 값을 나타낼 수 있음.</li>
+</ul>
+
+<p><strong>TBD: 이해하고 다시 작성</strong></p>
+<font color="red">★ NeoWizard ppt 62page 참조</font>
+
+<h3 id="logistic-regression-flow">logistic regression flow</h3>
+<p><img src="/assets/images/blog_images/classification/logistic_regression_flow.png" alt="classification_flow" /></p>
+
+
+</div>
+<div class="tags-container">
+	
+		<a href="http://localhost:4000/tags/#pandoly2" class="post-tag">pandoly2</a>, 
+	
+		<a href="http://localhost:4000/tags/#machine+learning" class="post-tag">machine learning</a>, 
+	
+		<a href="http://localhost:4000/tags/#AI" class="post-tag">AI</a>
+	
+</div>
+<div class="navigation">
+	
+		<a class="prev" href="/gradient-decent/">< 경사하강법 (Gradient decent algorithm)</a>
+	 
+	<a class="next" href="/perceptron/">퍼셉트론 (perceptron) ></a>
+
+</div>
+
+	<section class="comment-area w-100">
+		<div class="comment-wrapper">
+			<div id="disqus_thread" class="article-comments"></div>
+			<script>
+			(function() {
+			var d = document, s = d.createElement('script');
+			s.src = '//XXX.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+			})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		</div>
+	</section>
+
+	<div class="footer">
+		<span> 생각나는대로 적는 나만의 공간 <font color="red"> ♥ </font> <a href="https://pandoly2.github.io"><b>Blog pandoly2</b></a></span>
+	</div>
+</div>
+
+<script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        packages: ['base', 'ams']
+      },
+      loader: {
+        load: ['ui/menu', '[tex]/ams']
+      },
+      startup: {
+        ready() {
+          MathJax.startup.defaultReady();
+          const Macro = MathJax._.input.tex.Symbol.Macro;
+          const MapHandler = MathJax._.input.tex.MapHandler.MapHandler;
+          const Array = MathJax._.input.tex.ams.AmsMethods.default.Array;
+          const env = new Macro('psmallmatrix', Array, [null, '(', ')', 'c', '.333em', '.2em', 'S', 1]);
+          MapHandler.getMap('AMSmath-environment').add('psmallmatrix', env);
+        }
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+
+	<script src="assets/js/ephesus.js"></script>
+	<script type="text/javascript">
+		if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+			document.documentElement.setAttribute('data-theme', 'dark');
+			document.getElementById('mode-switcher').classList.add('active');
+		}
+	</script>
+
+	
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXX-00"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-XXXXXXXX-00');
+    </script>
+	
+</body>
+</html>
