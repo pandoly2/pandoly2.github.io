@@ -1,0 +1,24 @@
+I"�<h3 id="신경망의-구조">신경망의 구조</h3>
+<ul>
+  <li>퍼셉트론이 여러층 연결되어 구성되듯이 인간의 신경계도 여러개의 뉴런의 신호전달로 이루어진다.</li>
+  <li>
+    <p>인공신경망도 신경계와같이 여러개의 노드들간의 입력신호와 출력신호, 가중치, 바이어스에따라서 신호 전달이 이루어진다.</p>
+  </li>
+  <li>
+    <p>다층 퍼셉트론 <br />
+<img src="/assets/images/blog_images/Perceptron/perceptron_xor_detail_solution.png" alt="perceptron_xor_detail_solution" /></p>
+  </li>
+  <li>
+    <p>신경망 <br />
+<img src="/assets/images/blog_images/NeuralNetwork/nn_natural.png" alt="nn_natural" /></p>
+  </li>
+  <li>인공 신경망의 구조 <br />
+<img src="/assets/images/blog_images/NeuralNetwork/nn_artificial.png" alt="nn_artificial" /></li>
+</ul>
+
+<h3 id="신경망-구성">신경망 구성</h3>
+<ul>
+  <li></li>
+</ul>
+
+:ET

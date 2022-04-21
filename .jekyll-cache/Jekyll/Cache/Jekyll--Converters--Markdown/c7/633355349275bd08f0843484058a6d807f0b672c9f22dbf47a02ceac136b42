@@ -1,0 +1,16 @@
+I"�<h2 id="1-매개변수-갱신">1. 매개변수 갱신</h2>
+<h3 id="sgd">SGD</h3>
+
+<h3 id="모멘텀momentum">모멘텀(Momentum)</h3>
+
+<h3 id="adagrad">AdaGrad</h3>
+
+<h3 id="adam">Adam</h3>
+
+<h2 id="2-가중치의-초깃값">2. 가중치의 초깃값</h2>
+
+<h2 id="3-배치-정규화">3. 배치 정규화</h2>
+
+<h2 id="back-propagation-오차역전법">Back Propagation (오차역전법)</h2>
+
+:ET
