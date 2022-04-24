@@ -4,7 +4,7 @@
  <title>Pandoly2 - 생각나는대로</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2022-04-22T08:05:07+00:00</updated>
+ <updated>2022-04-24T06:14:33+00:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>pandoly2</name>
@@ -14,8 +14,8 @@
  
  <entry>
    <title>심층 신경망(딥러닝) 학습 관련 기술(optimization) - 두번째</title>
-   <link href="http://localhost:4000/optimization-parameter/"/>
-   <updated>2022-04-20T00:00:00+00:00</updated>
+   <link href="http://localhost:4000/optimization-parameter-2/"/>
+   <updated>2022-04-24T00:00:00+00:00</updated>
    <id>http://localhost:4000/01-신경망학습기술-2</id>
    <content type="html">&lt;h2 id=&quot;2-가중치의-초깃값&quot;&gt;2. 가중치의 초깃값&lt;/h2&gt;
 
@@ -35,8 +35,8 @@
  <entry>
    <title>심층 신경망(딥러닝) 학습 관련 기술(optimization) - 매개변수 갱신</title>
    <link href="http://localhost:4000/optimization-parameter/"/>
-   <updated>2022-04-20T00:00:00+00:00</updated>
-   <id>http://localhost:4000/04-신경망학습기술</id>
+   <updated>2022-04-23T00:00:00+00:00</updated>
+   <id>http://localhost:4000/01-신경망학습기술</id>
    <content type="html">&lt;ul&gt;
   &lt;li&gt;심층 신경망에서의 학습은 실제값과 우리모델이 예측한 예측값의 차이를 줄여주는것에 목적이 있다.&lt;/li&gt;
   &lt;li&gt;우리는 이미 linear regression이나 logistic regression에서 학습할때 손실함수(loss fuction)을 이용하여 예측값 y와 손실함수의 결과값의 차이가 작아 질 수 있도록 W(weight: 가중치)와 b(bias : 바이어스)를 업데이트하면서 성공률을 높이는 방법을 공부했다.&lt;/li&gt;
@@ -177,6 +177,9 @@
 참고 : &lt;a href=&quot;https://en.wikipedia.org/wiki/Hadamard_product_(matrices)&quot;&gt;(https://en.wikipedia.org/wiki/Hadamard_product_(matrices)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog_images/DeepNeuralNetwork/fig%206-6.png&quot; alt=&quot;dl_adaptive_gradient_graph&quot; /&gt;
+출처 : 밑바닥부터 시작하는 딥러닝&lt;/p&gt;
+
 &lt;h3 id=&quot;rmsprop&quot;&gt;RMSProp&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;AdaGrad는 과거의 기울기를 제곱하여 계속 더한다. 그래서 학습을 진행할수록 step이 줄어든다.&lt;/li&gt;
@@ -192,7 +195,25 @@
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;adam&quot;&gt;Adam&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Momentum과 RMSProp 두가지 방식을 합친것&lt;/li&gt;
+  &lt;li&gt;복잡하다. 하지만 현재 가장 많이 쓰이는 Optimizer다. (전혀 아담하지않다(?))&lt;/li&gt;
+  &lt;li&gt;가중치 β_1으로 Momentum을 변형하여 점화식 : 
+\(m_n\ =\ \beta _1m_{n-1}\ +\ \left(1-\beta _1\right)\nabla f\left(x_n\right),\ m_{-1}\ =\ 0\)&lt;/li&gt;
+  &lt;li&gt;을 생각하고 가중치 β_2로 AdaGrad를 변형하여 점화식 : 
+\(v_n\ =\ \beta _2v_{n-1}\ +\ \left(1-\beta _2\right)\nabla f\left(x_n\right)\odot \nabla f\left(x_n\right),\ \ v_{-1}\ =\ 0\)&lt;/li&gt;
+  &lt;li&gt;을 생각한다.&lt;/li&gt;
+  &lt;li&gt;Adam은 2015년에 제안된 새로운 방법이다.&lt;/li&gt;
+&lt;/ul&gt;
 
+&lt;p&gt;※ 코드 테스트 해볼것 chapter06 - test&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog_images/DeepNeuralNetwork/fig%206-7.png&quot; alt=&quot;dl_adam_graph&quot; /&gt;
+출처 : 밑바닥부터 시작하는 딥러닝&lt;/p&gt;
+
+&lt;h3 id=&quot;최적화-기법-비교--sgd-momentum-adagrad-adam&quot;&gt;최적화 기법 비교 : SGD, Momentum, AdaGrad, Adam&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog_images/DeepNeuralNetwork/fig%206-8.png&quot; alt=&quot;dl_compare_minimun&quot; /&gt;
+출처 : 밑바닥부터 시작하는 딥러닝&lt;/p&gt;
 </content>
  </entry>
  
