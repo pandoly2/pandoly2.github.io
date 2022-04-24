@@ -1,0 +1,35 @@
+I"h<h2 id="2-가중치의-초깃값">2. 가중치의 초깃값</h2>
+<ul>
+  <li>학습이 이루어지지않은 초기에 W(weight)와 b(bias)를 어떻게 설정하는게 좋을까.</li>
+  <li>초기값 설정의 예
+    <ol>
+      <li>가중치(Weight)를 평균이 0, 표준편차가 1인 정규분포로 초기화할때의 각층의 데이터 활성화값 분포
+<img src="/assets/images/blog_images/DeepNeuralNetwork2/fig%206-10.png" alt="dl2_initial_param_ex" /> <br />
+ 문제 : <strong>Vanishing Gradient Problem</strong></li>
+      <li>가중치(Weight)를 평균이 0, 표준편차가 0.01인 정규분포로 초기화할때의 각층의 데이터 확성화값 분포
+<img src="/assets/images/blog_images/DeepNeuralNetwork2/fig%206-11.png" alt="dl2_initial_param_ex" /> <br />
+ 문제 : <strong>표현력 제한</strong></li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="표현력-제한">표현력 제한</h3>
+<ul>
+  <li>첫번째 가중치 행렬의 각 행이 동일하고 두번째부터는 각 단계마다 가중치가 동일한 신경망을 가정해보면, 이 신경망은 layer 1부터 뉴런의 개수가 모두 1개인 신경망과 본질적으로 동일하다.</li>
+  <li>즉, 정보를 담을 수 있는 노드(or 뉴런)의 가중치가 제한된다.</li>
+  <li>표준편차를 너무작게 잡게되면 정보를 담을 수 있는 노드가 부족해진다.</li>
+</ul>
+
+<p><img src="/assets/images/blog_images/DeepNeuralNetwork2/%ED%91%9C%ED%98%84%EB%A0%A5%EC%A0%9C%ED%95%9C.png" alt="dl2_initial_param_limit_expression" /></p>
+
+<h2 id="3-배치-정규화">3. 배치 정규화</h2>
+
+<h2 id="4-바른-학습을-위해">4. 바른 학습을 위해</h2>
+<h3 id="오버피팅">오버피팅</h3>
+
+<h3 id="가중치-감소">가중치 감소</h3>
+
+<h3 id="드롭아웃">드롭아웃</h3>
+
+<h2 id="5-적절한-하이퍼파라미터-값-찾기">5. 적절한 하이퍼파라미터 값 찾기</h2>
+:ET

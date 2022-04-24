@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>심층 신경망(딥러닝) 학습 관련 기술(optimization) - 두번째 - Pandoly2 - 생각나는대로</title>
+		<title>심층 신경망(딥러닝) 학습 관련 기술(optimization) - 가중치 초깃값 - Pandoly2 - 생각나는대로</title>
 		<meta name="description" content="생각나는대로 적는 공간">
 		<meta name="keywords" content="pandoly2machine learningAI">
 		<base href="http://localhost:4000" />
@@ -15,11 +15,11 @@
 		<meta property="og:site_name" content="Pandoly2 - 생각나는대로">
 		<meta property="og:type" content="article" />
 		<meta property="og:url" content="http://localhost:4000/optimization-parameter-2/"/>
-		<meta property="og:title" content="심층 신경망(딥러닝) 학습 관련 기술(optimization) - 두번째 - Pandoly2 - 생각나는대로" />
+		<meta property="og:title" content="심층 신경망(딥러닝) 학습 관련 기술(optimization) - 가중치 초깃값 - Pandoly2 - 생각나는대로" />
 		<meta property="og:description" content="생각나는대로 적는 공간" />
 		<meta property="og:image" content="http://localhost:4000/assets/images/favicon.png"/>
 		<meta name="twitter:card" content="summary"/>
-		<meta property="twitter:title" content="심층 신경망(딥러닝) 학습 관련 기술(optimization) - 두번째 - Pandoly2 - 생각나는대로" />
+		<meta property="twitter:title" content="심층 신경망(딥러닝) 학습 관련 기술(optimization) - 가중치 초깃값 - Pandoly2 - 생각나는대로" />
 		<meta property="twitter:description" content="생각나는대로 적는 공간" />
 		<meta property="twitter:image" content="http://localhost:4000/assets/images/favicon.png" />
 		<link rel="stylesheet" href="assets/css/highlight.css">
@@ -61,14 +61,67 @@
 	<div class="post-share">
 		Share:&nbsp; 
 		<a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/01-신경망학습기술-2" target="_blank"><img src="assets/images/icon/facebook.svg" class="social-icon"></a>
-		<a href="https://twitter.com/intent/tweet?source=tweetbutton&amp;original_referer=http://localhost:4000/01-신경망학습기술-2&amp;text=심층 신경망(딥러닝) 학습 관련 기술(optimization) - 두번째 - http://localhost:4000/01-신경망학습기술-2" target="_blank"><img src="assets/images/icon/twitter.svg" class="social-icon"></a>
+		<a href="https://twitter.com/intent/tweet?source=tweetbutton&amp;original_referer=http://localhost:4000/01-신경망학습기술-2&amp;text=심층 신경망(딥러닝) 학습 관련 기술(optimization) - 가중치 초깃값 - http://localhost:4000/01-신경망학습기술-2" target="_blank"><img src="assets/images/icon/twitter.svg" class="social-icon"></a>
 		<a href="https://api.whatsapp.com/send?text=http://localhost:4000/01-신경망학습기술-2" target="_blank"><img src="assets/images/icon/whatsapp.svg" class="social-icon"></a>
 	</div>
 </div>
 
 <div class="blog-post-content">
-	<h1>심층 신경망(딥러닝) 학습 관련 기술(optimization) - 두번째</h1>
+	<h1>심층 신경망(딥러닝) 학습 관련 기술(optimization) - 가중치 초깃값</h1>
 	<h2 id="2-가중치의-초깃값">2. 가중치의 초깃값</h2>
+<ul>
+  <li>학습이 이루어지지않은 초기에 W(weight)와 b(bias)를 어떻게 설정하는게 좋을까.</li>
+  <li>초기값 설정의 예
+    <ol>
+      <li>가중치(Weight)를 평균이 0, 표준편차가 1인 정규분포로 초기화할때의 각층의 데이터 활성화값 분포
+<img src="/assets/images/blog_images/DeepNeuralNetwork2/fig%206-10.png" alt="dl2_initial_param_ex" /> <br />
+ 문제 : <strong>Vanishing Gradient Problem</strong></li>
+      <li>가중치(Weight)를 평균이 0, 표준편차가 0.01인 정규분포로 초기화할때의 각층의 데이터 확성화값 분포
+<img src="/assets/images/blog_images/DeepNeuralNetwork2/fig%206-11.png" alt="dl2_initial_param_ex" /> <br />
+ 문제 : <strong>표현력 제한</strong></li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="표현력-제한">표현력 제한</h3>
+<ul>
+  <li>첫번째 가중치 행렬의 각 행이 동일하고 두번째부터는 각 단계마다 가중치가 동일한 신경망을 가정해보면, 이 신경망은 layer 1부터 뉴런의 개수가 모두 1개인 신경망과 본질적으로 동일하다.</li>
+  <li>즉, 정보를 담을 수 있는 노드(or 뉴런)의 가중치가 제한된다.</li>
+  <li>표준편차를 너무작게 잡게되면 정보를 담을 수 있는 노드가 부족해지는것을 주의해야 한다.</li>
+</ul>
+
+<p><img src="/assets/images/blog_images/DeepNeuralNetwork2/%ED%91%9C%ED%98%84%EB%A0%A5%EC%A0%9C%ED%95%9C.png" alt="dl2_initial_param_limit_expression" /></p>
+
+<h3 id="vanishing-gradient-problem">Vanishing gradient problem</h3>
+<ul>
+  <li>sigmoid 미분값을 전파함.</li>
+  <li>데이터 셋이 y값 1/0부분에 군집되어있음.</li>
+  <li>sigmoid 미분값을 계속 곱하다보면 0에 수렴하는 값이됨.</li>
+  <li>층이 뒤로갈수록 gradient값이 작아서 학습이 이루어 지지않음.</li>
+  <li>인공신경망의 2번째 겨울에 하나의 주된 원인 (꽤 오랫동안 문제였다고함)
+<img src="/assets/images/blog_images/DeepNeuralNetwork2/vanishing_gradient.PNG" alt="dl2_vanish_gradient" /></li>
+</ul>
+
+<h3 id="lecun-초기값--xavier-초기값">LeCun 초기값 / Xavier 초기값</h3>
+<ul>
+  <li>활성화 함수 Sigmoid일때,</li>
+  <li>
+    <p>평균이 0인 정규분포, 입력 뉴런과 출력 뉴런의 평균의 역수 : 분산
+<img src="/assets/images/blog_images/DeepNeuralNetwork2/Lecun_Xavier.PNG" alt="dl_lecun_xavier" /></p>
+  </li>
+  <li>가중치 초가값으로 LeCun/Xavier 초기값을 이용했을때 각층의 데이터 활성화값 분포
+<img src="/assets/images/blog_images/DeepNeuralNetwork2/Xavier_n.PNG" alt="dl_xavier_n" /></li>
+</ul>
+
+<h3 id="he-초기값">He 초기값</h3>
+<ul>
+  <li>활성화 함수 ReLU 일때, 
+<img src="/assets/images/blog_images/DeepNeuralNetwork2/he_initial.PNG" alt="dl_he_initial" /></li>
+  <li>Lecun 초기값을 사용했을때,
+<img src="/assets/images/blog_images/DeepNeuralNetwork2/relu_lecun.PNG" alt="dl_ReLU_lecun" /></li>
+  <li>He 초기값을 사용했을때, 
+<img src="/assets/images/blog_images/DeepNeuralNetwork2/relu_he.PNG" alt="dl_ReLU_He" /></li>
+</ul>
 
 <h2 id="3-배치-정규화">3. 배치 정규화</h2>
 
