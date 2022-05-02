@@ -4,7 +4,7 @@
  <title>Pandoly2 - 생각나는대로</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2022-04-24T08:11:20+00:00</updated>
+ <updated>2022-05-02T07:21:40+00:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>pandoly2</name>
@@ -55,7 +55,7 @@
 &lt;ul&gt;
   &lt;li&gt;활성화 함수 Sigmoid일때,&lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;평균이 0인 정규분포, 입력 뉴런과 출력 뉴런의 평균의 역수 : 분산
+    &lt;p&gt;평균이 0인 정규분포, 입력 뉴런과 출력 뉴런의 평균의 역수 : 분산 &lt;br /&gt;
 &lt;img src=&quot;/assets/images/blog_images/DeepNeuralNetwork2/Lecun_Xavier.PNG&quot; alt=&quot;dl_lecun_xavier&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;가중치 초가값으로 LeCun/Xavier 초기값을 이용했을때 각층의 데이터 활성화값 분포
@@ -64,11 +64,11 @@
 
 &lt;h3 id=&quot;he-초기값&quot;&gt;He 초기값&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;활성화 함수 ReLU 일때, 
+  &lt;li&gt;활성화 함수 ReLU 일때,  &lt;br /&gt;
 &lt;img src=&quot;/assets/images/blog_images/DeepNeuralNetwork2/he_initial.PNG&quot; alt=&quot;dl_he_initial&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;Lecun 초기값을 사용했을때,
+  &lt;li&gt;Lecun 초기값을 사용했을때, &lt;br /&gt;
 &lt;img src=&quot;/assets/images/blog_images/DeepNeuralNetwork2/relu_lecun.PNG&quot; alt=&quot;dl_ReLU_lecun&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;He 초기값을 사용했을때, 
+  &lt;li&gt;He 초기값을 사용했을때,  &lt;br /&gt;
 &lt;img src=&quot;/assets/images/blog_images/DeepNeuralNetwork2/relu_he.PNG&quot; alt=&quot;dl_ReLU_He&quot; /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
