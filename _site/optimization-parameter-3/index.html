@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko-KR" data-theme="light">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>심층 신경망(딥러닝) 학습 관련 기술(optimization) - Batch Normalization - Pandoly2 - 생각나는대로</title>
+		<meta name="description" content="생각나는대로 적는 공간">
+		<meta name="keywords" content="pandoly2machine learningAI">
+		<base href="http://localhost:4000" />
+		
+    	<meta content="2022-05-03T00:00:00+00:00" property="article:published_time">
+    	<meta content="http://localhost:4000/about/" property="article:author">
+  		
+		<meta property="og:site_name" content="Pandoly2 - 생각나는대로">
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content="http://localhost:4000/optimization-parameter-3/"/>
+		<meta property="og:title" content="심층 신경망(딥러닝) 학습 관련 기술(optimization) - Batch Normalization - Pandoly2 - 생각나는대로" />
+		<meta property="og:description" content="생각나는대로 적는 공간" />
+		<meta property="og:image" content="http://localhost:4000/assets/images/favicon.png"/>
+		<meta name="twitter:card" content="summary"/>
+		<meta property="twitter:title" content="심층 신경망(딥러닝) 학습 관련 기술(optimization) - Batch Normalization - Pandoly2 - 생각나는대로" />
+		<meta property="twitter:description" content="생각나는대로 적는 공간" />
+		<meta property="twitter:image" content="http://localhost:4000/assets/images/favicon.png" />
+		<link rel="stylesheet" href="assets/css/highlight.css">
+		<link rel="stylesheet" href="assets/css/style.css">
+		<link rel="shortcut icon" href="assets/images/favicon.png" />
+		<link rel="alternate" type="application/atom+xml" title="Pandoly2 - 생각나는대로" href="http://localhost:4000/atom.xml">
+		<link rel="alternate" type="application/json" title="Pandoly2 - 생각나는대로" href="http://localhost:4000/feed.json" />
+		<link rel="sitemap" type="application/xml" title="sitemap" href="http://localhost:4000/sitemap.xml" />
+		<meta name="google-site-verification" content="XXX" />
+	</head>
+<body>
+<div class="container">
+	<div class="profile">
+		<a href="http://localhost:4000"><img src="assets/images/profile_paris.jpg" class="profile-image"></a>
+		<div class="profile-about">
+			<h2 style="margin-bottom: 0; font-weight: 700;">pandoly2</h2>
+			
+			
+			
+				<a href="https://instagram.com/pandoly2" target="_blank"><img src="assets/images/icon/instagram.svg" class="social-icon"></a>
+			
+			
+			
+				<a href="https://github.com/pandoly2" target="_blank"><img src="assets/images/icon/github.svg" class="social-icon"></a>
+			
+			
+			<a href="about"><img src="assets/images/icon/me.svg" class="social-icon"></a>
+			<br>
+			Software Engineer
+			<br>
+			<div class="mode" id="mode-switcher" onclick="toggleNightMode();">
+				<span></span>
+			</div>
+		</div>
+	</div>
+	
+<div class="post-header">
+	<div class="post-date">03.05.2022</div>
+	<div class="post-share">
+		Share:&nbsp; 
+		<a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/01-신경망학습기술-3" target="_blank"><img src="assets/images/icon/facebook.svg" class="social-icon"></a>
+		<a href="https://twitter.com/intent/tweet?source=tweetbutton&amp;original_referer=http://localhost:4000/01-신경망학습기술-3&amp;text=심층 신경망(딥러닝) 학습 관련 기술(optimization) - Batch Normalization - http://localhost:4000/01-신경망학습기술-3" target="_blank"><img src="assets/images/icon/twitter.svg" class="social-icon"></a>
+		<a href="https://api.whatsapp.com/send?text=http://localhost:4000/01-신경망학습기술-3" target="_blank"><img src="assets/images/icon/whatsapp.svg" class="social-icon"></a>
+	</div>
+</div>
+
+<div class="blog-post-content">
+	<h1>심층 신경망(딥러닝) 학습 관련 기술(optimization) - Batch Normalization</h1>
+	<h2 id="3-배치-정규화">3. 배치 정규화</h2>
+<ul>
+  <li>학습을 시작하기전에 가중치의 분포, 특히 표준편차를 잘 잡아서 은닉층에 나타나는 데이터의 분포가 중앙에 쏠리거나 양 사이드에 나타나지않게 하므로써 학습이 잘되게 하는게 목표였다.</li>
+  <li>affine층과 활성화 층 사이에 Batch Normalization층을 끼워 넣는다.</li>
+</ul>
+
+<p><img src="/assets/images/blog_images/DeepNeuralNetwork3/ML.drawio.png" alt="opt3_batch_normal_desc" /></p>
+<ul>
+  <li>데이터를 분산시키기위해 정규분포의 특성으로 만든다. (평균 0, 표준편차 1)
+    <ol>
+      <li>입력값이 다음과 같이 주어질때,  <br />
+ \(x\ =\ \begin{pmatrix}x_1\\x_2\\x_3\\...\\x_n\end{pmatrix}\)</li>
+      <li>각 열에대한 평균, \(\mu \ =\ \frac{1}{n}\sum _{i=1}^nx_i\)</li>
+      <li>각 열의 평균을 0으로 만듬 : \(x_c\ =\ x\ -\ \mu\)</li>
+      <li>x의 각 열의 분산 \(\sigma ^2\ =\ \frac{1}{N}\sum _{i=1}^n\left(x_i\ -\ \mu \right)^2\)</li>
+      <li>각 열을 normalize함, \(x_n\ =\ \frac{x_c}{\sigma }\) , (평균을 뺀 각열을 표준편차로 나눔)</li>
+      <li>\(x_n\) 은 평균이 0, 표준 편차가 1인 분포를 따름.</li>
+      <li>여기에 데이터를 “잘”분산시키기위해 λ, β를 적용, \(\lambda \ \cdot \ x_n\ +\ \beta\)</li>
+      <li>결과값이 최종 y 값. (batch normalization 된 값)</li>
+    </ol>
+  </li>
+</ul>
+
+</div>
+<div class="tags-container">
+	
+		<a href="http://localhost:4000/tags/#pandoly2" class="post-tag">pandoly2</a>, 
+	
+		<a href="http://localhost:4000/tags/#machine+learning" class="post-tag">machine learning</a>, 
+	
+		<a href="http://localhost:4000/tags/#AI" class="post-tag">AI</a>
+	
+</div>
+<div class="navigation">
+	
+		<a class="prev" href="/optimization-parameter-2/">< 심층 신경망(딥러닝) 학습 관련 기술(optimization) - 가중치 초깃값</a>
+	 
+	<a class="next" href="/optimization-parameter-4/">심층 신경망(딥러닝) 학습 관련 기술(optimization) - 바른 학습을 위해 ></a>
+
+</div>
+
+	<section class="comment-area w-100">
+		<div class="comment-wrapper">
+			<div id="disqus_thread" class="article-comments"></div>
+			<script>
+			(function() {
+			var d = document, s = d.createElement('script');
+			s.src = '//XXX.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+			})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		</div>
+	</section>
+
+	<div class="footer">
+		<span> 생각나는대로 적는 나만의 공간 <font color="red"> ♥ </font> <a href="https://pandoly2.github.io"><b>Blog pandoly2</b></a></span>
+	</div>
+</div>
+
+<script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        packages: ['base', 'ams']
+      },
+      loader: {
+        load: ['ui/menu', '[tex]/ams']
+      },
+      startup: {
+        ready() {
+          MathJax.startup.defaultReady();
+          const Macro = MathJax._.input.tex.Symbol.Macro;
+          const MapHandler = MathJax._.input.tex.MapHandler.MapHandler;
+          const Array = MathJax._.input.tex.ams.AmsMethods.default.Array;
+          const env = new Macro('psmallmatrix', Array, [null, '(', ')', 'c', '.333em', '.2em', 'S', 1]);
+          MapHandler.getMap('AMSmath-environment').add('psmallmatrix', env);
+        }
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+
+	<script src="assets/js/ephesus.js"></script>
+	<script type="text/javascript">
+		if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+			document.documentElement.setAttribute('data-theme', 'dark');
+			document.getElementById('mode-switcher').classList.add('active');
+		}
+	</script>
+
+	
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXX-00"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-XXXXXXXX-00');
+    </script>
+	
+</body>
+</html>
