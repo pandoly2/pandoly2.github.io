@@ -1,0 +1,36 @@
+I"{<h2 id="4-바른-학습을-위해">4. 바른 학습을 위해</h2>
+<h3 id="오버피팅">오버피팅</h3>
+<ul>
+  <li>학습 데이터에 너무 최적화 되어 weight 값이 잡히고, 이후 학습 데이터가 아닌 새로운 데이터에는 올바른 값을 내보내지 못하는 현상. 매개변수에 비해 상대적으로 훈련 데이터 수가 적을 때 일어난다.</li>
+</ul>
+
+<p><img src="/assets/images/blog_images/DeepNeuralNetwork4/overfitting.PNG" alt="nn_overfitting_png" /></p>
+
+<h3 id="regularization">Regularization</h3>
+<ul>
+  <li>데이터에 너무 과적합되어 모델이 피팅되었으니, 이를 좀 덜 적합하게 하고, 이후 새로운 데이터에도 일반적으로 들어맞는 모델을 만들어야 한다. 이 때, 과적합이 아닌 일반성을 띄게 해주는 기법</li>
+</ul>
+
+<h4 id="가중치-감소">가중치 감소</h4>
+<p><img src="/assets/images/blog_images/DeepNeuralNetwork4/weight_decay.PNG" alt="nn_weight_decay_png" /></p>
+<ul>
+  <li>weight decay 기하학적 설명
+<img src="/assets/images/blog_images/DeepNeuralNetwork4/weight_decay_desc.PNG" alt="nn_weight_decay_desc" />
+    <h4 id="드롭아웃">드롭아웃</h4>
+  </li>
+  <li>학습시 마다 뉴런을 랜덤으로 비활성화 시킨다.</li>
+  <li>비율은 Hyperparameter로 초기 학습시 정한다.</li>
+  <li>놀랍게도 overfitting을 피하기위해서 많이 쓰는 기법이다.</li>
+  <li>두가지 해석이있다. (증명이아닌듯)
+    <ol>
+      <li>앙상블 기법
+한사람이 독단적으로 결정하는것이아니라, 여러 사람이 모여서 결정하는 것. <br />
+여러 NN을 학습시켜서 다수의 판단을 믿는 방법.</li>
+      <li>은행원
+한 은행원이 오래 근무를하다보면 담합을한다 (cheating)</li>
+    </ol>
+  </li>
+</ul>
+
+<p><img src="/assets/images/blog_images/DeepNeuralNetwork4/dropout.PNG" alt="nn_dropout_png" /></p>
+:ET

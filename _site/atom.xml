@@ -4,7 +4,7 @@
  <title>Pandoly2 - 생각나는대로</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2022-05-06T06:10:49+00:00</updated>
+ <updated>2022-05-06T06:53:22+00:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>pandoly2</name>
@@ -18,6 +18,36 @@
    <updated>2022-05-03T00:00:00+00:00</updated>
    <id>http://localhost:4000/03-신경망학습기술-5</id>
    <content type="html">&lt;h2 id=&quot;5-적절한-하이퍼파라미터-값-찾기&quot;&gt;5. 적절한 하이퍼파라미터 값 찾기&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Parameter vs. Hyperparameter&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Parameter :  &lt;br /&gt;
+데이터를 통해 머신이 학습하는 값 &lt;br /&gt;
+ex) 가중치, 편향 등등 &lt;br /&gt;
+사람이 개입하지않는다. &lt;br /&gt;
+머신이 스스로 학습한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Hyperparameter :  &lt;br /&gt;
+사람이 결정하는 값
+ex) 층의 개수, 뉴런의 개수, learning rate, 손실함수의 종류, 배치 크기, 훈련 횟수 등등
+좋은 값을 찾기위해서는 여러 값을 직접 시도해보는 수 밖에 없다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;여러번-시도하는-방법&quot;&gt;여러번 시도하는 방법&lt;/h3&gt;
+&lt;h4 id=&quot;데이터-분할&quot;&gt;데이터 분할&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;train data : parameter 학습&lt;/li&gt;
+  &lt;li&gt;validation data : hyperparameter 성능 평가&lt;/li&gt;
+  &lt;li&gt;test data : 신경망의 범용 성능 평가
+&lt;img src=&quot;/assets/images/blog_images/DeepNeuralNetwork5/seperated_data.PNG&quot; alt=&quot;nn_seperated_data_png&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;k-fold-validation&quot;&gt;K-fold validation&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;데이터가 많지 않을 경우 사용한다.&lt;/li&gt;
+  &lt;li&gt;train 데이터를  K-등분한 후 하나를 검증용으로 나머지를 훈련용으로 사용한 후 평균한다. 
+&lt;img src=&quot;/assets/images/blog_images/DeepNeuralNetwork5/4_fold_validation.PNG&quot; alt=&quot;nn_k_fold_val_png&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </content>
  </entry>
  
@@ -51,8 +81,14 @@
   &lt;li&gt;놀랍게도 overfitting을 피하기위해서 많이 쓰는 기법이다.&lt;/li&gt;
   &lt;li&gt;두가지 해석이있다. (증명이아닌듯)
     &lt;ol&gt;
-      &lt;li&gt;앙상블 기법&lt;/li&gt;
-      &lt;li&gt;은행원&lt;/li&gt;
+      &lt;li&gt;앙상블 기법
+한사람이 독단적으로 결정하는것이아니라, 여러 사람이 모여서 결정하는 것. &lt;br /&gt;
+여러 NN을 학습시켜서 다수의 판단을 믿는 방법.&lt;/li&gt;
+      &lt;li&gt;은행원
+딥러닝의 대가(힌트교수)의 해석
+한 은행원이 오래 근무를하다보면 담합을한다 (cheating)
+같은 관점에서 노드들이 담합을 하는것으로보고 그 관계를 끊는다.
+이로서 성능이 향상된다.&lt;/li&gt;
     &lt;/ol&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
