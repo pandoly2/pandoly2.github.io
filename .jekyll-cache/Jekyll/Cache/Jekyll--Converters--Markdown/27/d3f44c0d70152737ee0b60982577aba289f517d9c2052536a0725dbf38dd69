@@ -1,15 +1,0 @@
-I"<h2 id="5-적절한-하이퍼파라미터-값-찾기">5. 적절한 하이퍼파라미터 값 찾기</h2>
-<ul>
-  <li>Parameter vs. Hyperparameter</li>
-  <li>
-    <p>Parameter :  <br />
-데이터를 통해 머신이 학습하는 값 <br />
-ex) 가중치, 편향 등등 <br />
-사람이 개입하지않는다. <br />
-머신이 스스로 학습한다.</p>
-  </li>
-  <li>Hyperparameter :  <br />
-사람이 결정하는 값
-ex) 층의 개수, 뉴런의 개수, learning rate, 손실함수의 종류, 배치 크기, 훈련 횟수 등등</li>
-</ul>
-:ET

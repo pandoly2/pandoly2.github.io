@@ -4,13 +4,70 @@
  <title>Pandoly2 - 생각나는대로</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2022-05-06T06:53:22+00:00</updated>
+ <updated>2022-05-22T06:46:08+00:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>pandoly2</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>입이트이는영어 - Food</title>
+   <link href="http://localhost:4000/ebs-food/"/>
+   <updated>2022-05-21T00:00:00+00:00</updated>
+   <id>http://localhost:4000/01-입트영</id>
+   <content type="html">&lt;h2 id=&quot;food&quot;&gt;Food&lt;/h2&gt;
+
+&lt;h3 id=&quot;step-1&quot;&gt;step 1&lt;/h3&gt;
+&lt;h4 id=&quot;talk-about-your-taste-when-it-comes-to-food&quot;&gt;talk about your taste when it comes to food.&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;I have a good &lt;del&gt;apitiete&lt;/del&gt; appetite so I’m not a &lt;del&gt;피키&lt;/del&gt; picky eater.
+  I eat everthing from junkfood &lt;u&gt;to&lt;/u&gt; &lt;del&gt;hightend&lt;/del&gt; high-end &lt;del&gt;쿠이즨&lt;/del&gt; cuisine. &lt;br /&gt;
+  I &lt;del&gt;enjoyed&lt;/del&gt; enjoy food at &lt;del&gt;릿지&lt;/del&gt; ritzy restaurants since it’s so expensive. &lt;br /&gt;
+  &lt;del&gt;I also I street food easy wallet.&lt;/del&gt; I also like street food that’s easy on the wallet. &lt;u&gt;When&lt;/u&gt; I’m hungry nothing &lt;del&gt;bit&lt;/del&gt; beats &lt;del&gt;grap&lt;/del&gt; grabbing &lt;del&gt;on the bite on the street.&lt;/del&gt; a bit on the street.  &lt;br /&gt;
+  One thing I would like to change about my taste is that &lt;del&gt;it is too saulty.&lt;/del&gt; I eat foods that are too salty. Heavily &lt;del&gt;seasons&lt;/del&gt; seasoned food &lt;u&gt;is&lt;/u&gt; bad &lt;del&gt;from&lt;/del&gt; for my health, So I would like to kick this habit.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;단어&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;뜻&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;appetite&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;식욕, 욕구&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;picky&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;까다로운, 별스러운&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;cuisine&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;요리법, (비싼 식당의) 요리&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;ritzy&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;호화로운, 화려한&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;baat&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;(게임,시합에서) 이기다, 통제[억제]하다, 맥박, 리듬&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;step-2&quot;&gt;step 2&lt;/h3&gt;
+&lt;h4 id=&quot;talk-about-delisious-cousine-you-had-reasonly&quot;&gt;talk about delisious cousine you had reasonly.&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;I reasonly had get together with friends we had dinner together. I had hankering for some fresh sea food&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>심층 신경망(딥러닝) 학습 관련 기술(optimization) - Hyperparameter</title>
